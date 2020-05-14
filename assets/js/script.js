@@ -11,6 +11,7 @@ let idBtnUpPage = document.getElementById("btnUpPage");
         idBtnUpPage.style.zIndex = 99;
         idBtnUpPage.style.opacity = "1";
         idBtnUpPage.style.bottom = "20px";
+        idBtnUpPage.style.transition= "padding 500ms, opacity 1s, bottom 1s";
       } else {
         idBtnUpPage.style.zIndex = -1;
         idBtnUpPage.style.opacity = "0";
