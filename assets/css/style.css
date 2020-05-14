@@ -1,0 +1,22 @@
+#btnUpPage {
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
+    z-index: -1;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    background-color: rgba(46, 32, 109, 0.8);
+    opacity: 0;
+    color: white;
+    padding: 6px 12px 12px 12px;
+    border-radius: 2rem;
+    transition: padding 500ms, opacity 1s, bottom 1s;
+    cursor: pointer;
+}
+
+#btnUpPage:hover {
+    background-color: rgba(19, 12, 54, 0.8);
+    padding: 1px 12px 17px 12px;
+}
