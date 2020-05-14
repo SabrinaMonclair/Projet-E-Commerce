@@ -1,3 +1,9 @@
+
+
+
+
+
+// bouton up page
 let idBtnUpPage = document.getElementById("btnUpPage");
 
     window.onscroll = function () {
