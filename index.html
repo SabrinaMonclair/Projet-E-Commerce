@@ -7,17 +7,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="assets\img\iconeraisin.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <title>Site e-commerce Spiritueux</title>
 </head>
 
 <body>
     <!-- HEADER -->
-    <header>
 
+    <header>
+        <div id="img-accueil" class="container-fluid">
+            <div class="row justify-content-lg-start justify-content-center text-center">
+                <div class="col-12 justify-content-center text-center">
+                    <h1 class="text-pinkwhite" id="titreHeader">Les Spirit'eux</h1>
+                </div>
+            </div>
+        </div>
     </header>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Les Spirit'eux</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="toppage">
+        <a class="navbar-brand" href=""><img src="assets\img\iconeraisin.png" alt="iconRaisin" title="Les Spirit'eux"
+                style="width: 2em; height: 2em;"> Les Spirit'eux</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,13 +36,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="champagne">Champagnes</a>
+                    <a class="nav-link" href="#toppage" id="champagne">Champagnes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="wine">Vins</a>
+                    <a class="nav-link" href="#toppage" id="wine">Vins</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="spirit">Spiritueux</a>
+                    <a class="nav-link" href="#toppage" id="spirit">Spiritueux</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -40,25 +50,44 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
             </form>
             <a href="" class="ml-3 text-dark ">
-                <svg class="bi bi-bucket" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M8 1.5A4.5 4.5 0 003.5 6h-1a5.5 5.5 0 1111 0h-1A4.5 4.5 0 008 1.5z"
-                        clip-rule="evenodd" />
-                    <path fill-rule="evenodd"
-                        d="M1.61 5.687A.5.5 0 012 5.5h12a.5.5 0 01.488.608l-1.826 8.217a1.5 1.5 0 01-1.464 1.175H4.802a1.5 1.5 0 01-1.464-1.175L1.512 6.108a.5.5 0 01.098-.42zm1.013.813l1.691 7.608a.5.5 0 00.488.392h6.396a.5.5 0 00.488-.392l1.69-7.608H2.624z"
-                        clip-rule="evenodd" />
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="2em" height="2em"
+                    viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                    <path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
+			            c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7
+			            c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
+			            c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z" />
                 </svg>
             </a>
         </div>
     </nav>
     <!-- ITEMS -->
-   
-      <div class="container">
-        <div class="row bg-pinkdark text-darkwine justify-content-center p-2" id="mainArea">
 
-          
+    <div class="container">
+        <div class="row bg-pinkdark text-pinkwhite justify-content-center p-2" id="mainArea">
+            <h2>presentation</h2>
+            <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the
+                world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't
+                know exactly when we turned on each other, but I know that seven of us survived the slide... and only
+                five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that
+                killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+            <h2>presentation</h2>
+            <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the
+                world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't
+                know exactly when we turned on each other, but I know that seven of us survived the slide... and only
+                five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that
+                killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+            <h2>presentation</h2>
+            <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the
+                world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't
+                know exactly when we turned on each other, but I know that seven of us survived the slide... and only
+                five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that
+                killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+
+
         </div>
-      </div>
+    </div>
     </section>
 
     <!-- BARRE COLOREE FOOTER -->
@@ -77,7 +106,7 @@
             </div>
             <div class="row bg-pinkdark text-pinkwhite justify-content-center text-center p-2">
                 <div class="col-8 py-2">
-                  <span> © Mentions légales 2020, Team Sabrina.</span>
+                    <span> © Mentions légales 2020, Team Sabrina.</span>
                 </div>
             </div>
         </div>
@@ -85,7 +114,7 @@
     <button onclick="topFunction()" id="btnUpPage" title="Go to top">▲</button>
 
     <!-- BOOTSTRAP + SCRIPT JS -->
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
