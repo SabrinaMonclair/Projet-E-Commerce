@@ -26,13 +26,14 @@ let idChampagne = document.getElementById("champagne");
 let idWine = document.getElementById("wine");
 let idSpirit = document.getElementById("spirit");
 let idMainArea = document.getElementById("mainArea");
+let idCartList = document.getElementById("cartlist");
 
-// EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001"]
+// EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001","cardNom", 0]
 //champagne
-let cardDeutz = ["Champagne Deutz", "assets/img/champagne/Deutz.png", "Tirant sa parfaite harmonie des 3 cépages champenois qui interviennent à parts égales et constantes dans son assemblage, ce Deutz Brut Classic revêt une jolie robe or agrémentée de bulles fines et légères. Un champagne avec une palette complexe, une texture soyeuse avec une intense fraîcheur.", "33,90", "C001"]
-let cardRuinart = ["Champagne Ruinart", "assets/img/champagne/ruinart.png", "R de Ruinart Brut est l’expression première du goût de Ruinart. Ce champagne ou tout n’est que fraîcheur et équilibre révèle une superbe intensité olfactive sur un fond brioché et biscuité.", "46,50", "C002"]
-let cardBillecart = ["Champagne Billecart Salmon Rosé", "assets/img/champagne/billecartsalmon.png", "Croustillant, fin, le rosé de Billecart Salmon est un champagne subtil et d'une finesse remarquable. Associant des notes de groseilles, de framboises, de baies rouges et des saveurs toastées, léger, élégant et très frais, son effervescence est délicieuse.", "64,00", "C003"]
-let cardBollinger = ["Champagne Bollinger", "assets/img/champagne/bollinger.png", "La Maison Bollinger dévoile pour cet évènement le millésime 2011, exclusivement issus de grands crus de Pinot Noir du village d'Ay. C'est la premère fois que la maison élabore une cuvée issue uniquement de ce cru historique ou la maison est implantée depuis sa création en 1829. Avis aux collectionneurs!", "220", "C004"]
+let cardDeutz = ["Champagne Deutz", "assets/img/champagne/Deutz.png", "Tirant sa parfaite harmonie des 3 cépages champenois qui interviennent à parts égales et constantes dans son assemblage, ce Deutz Brut Classic revêt une jolie robe or agrémentée de bulles fines et légères. Un champagne avec une palette complexe, une texture soyeuse avec une intense fraîcheur.", "33,90", "C001", "cardDeutz", 0]
+let cardRuinart = ["Champagne Ruinart", "assets/img/champagne/ruinart.png", "R de Ruinart Brut est l’expression première du goût de Ruinart. Ce champagne ou tout n’est que fraîcheur et équilibre révèle une superbe intensité olfactive sur un fond brioché et biscuité.", "46,50", "C002", "cardRuinart", 0]
+let cardBillecart = ["Champagne Billecart Salmon Rosé", "assets/img/champagne/billecartsalmon.png", "Croustillant, fin, le rosé de Billecart Salmon est un champagne subtil et d'une finesse remarquable. Associant des notes de groseilles, de framboises, de baies rouges et des saveurs toastées, léger, élégant et très frais, son effervescence est délicieuse.", "64,00", "C003", "cardBillecart", 0]
+let cardBollinger = ["Champagne Bollinger", "assets/img/champagne/bollinger.png", "La Maison Bollinger dévoile pour cet évènement le millésime 2011, exclusivement issus de grands crus de Pinot Noir du village d'Ay. C'est la premère fois que la maison élabore une cuvée issue uniquement de ce cru historique ou la maison est implantée depuis sa création en 1829. Avis aux collectionneurs!", "220", "C004", "cardBollinger"]
 
 
 //wine
@@ -119,11 +120,31 @@ function createCard(type) {
                 <div class="modal-footer">
                 
                     <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine">Mettre dans le panier</button>
+                    <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
                 </div>
             </div>
         </div>
         </div>
       </div>`
+}
+  
+function addToBasket(type){
 
+  if(type[6]===0){
+    console.log(type[6]+"oui")
+    type[6]++;
+  idCartList.innerHTML +=
+    `<tr>
+      <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 2em;" alt="image ${type[0]}"></th>
+      <td>${type[0]}</td>
+      <td>${type[3]}€</td>
+      <td id="number${type[5]}">${type[6]}</td>
+    </tr>`;
+    
+  }else{
+    type[6]++;
+    let idnumber = document.getElementById(`number${type[5]}`)
+    idnumber.innerText = type[6]
+    console.log(type[6]+"non")
+  }
 }
