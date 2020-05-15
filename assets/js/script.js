@@ -30,18 +30,14 @@ let idCartList = document.getElementById("cartlist");
 
 // EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001","cardNom", 0]
 //champagne
-let cardDeutz = ["Champagne Deutz", "assets/img/champagne/Deutz.png", "Tirant sa parfaite harmonie des 3 cépages champenois qui interviennent à parts égales et constantes dans son assemblage, ce Deutz Brut Classic revêt une jolie robe or agrémentée de bulles fines et légères. Un champagne avec une palette complexe, une texture soyeuse avec une intense fraîcheur.", "33,90", "C001", "cardDeutz", 0]
-let cardRuinart = ["Champagne Ruinart", "assets/img/champagne/ruinart.png", "R de Ruinart Brut est l’expression première du goût de Ruinart. Ce champagne ou tout n’est que fraîcheur et équilibre révèle une superbe intensité olfactive sur un fond brioché et biscuité.", "46,50", "C002", "cardRuinart", 0]
-let cardBillecart = ["Champagne Billecart Salmon Rosé", "assets/img/champagne/billecartsalmon.png", "Croustillant, fin, le rosé de Billecart Salmon est un champagne subtil et d'une finesse remarquable. Associant des notes de groseilles, de framboises, de baies rouges et des saveurs toastées, léger, élégant et très frais, son effervescence est délicieuse.", "64,00", "C003", "cardBillecart", 0]
-let cardBollinger = ["Champagne Bollinger", "assets/img/champagne/bollinger.png", "La Maison Bollinger dévoile pour cet évènement le millésime 2011, exclusivement issus de grands crus de Pinot Noir du village d'Ay. C'est la premère fois que la maison élabore une cuvée issue uniquement de ce cru historique ou la maison est implantée depuis sa création en 1829. Avis aux collectionneurs!", "220", "C004", "cardBollinger"]
+ 
 
 
 let cardBollinger = ["Champagne Bollinger Coffret 007 - Millésime 2011", "assets/img/champagne/bollinger.png", "La Maison Bollinger dévoile pour cet évènement le millésime 2011, exclusivement issus de grands crus de Pinot Noir du village d'Ay. C'est la premère fois que la maison élabore une cuvée issue uniquement de ce cru historique ou la maison est implantée depuis sa création en 1829. Avis aux collectionneurs!", "220", "C001", "cardBollinger", 0]
 let cardBillecart = ["Champagne Billecart Salmon Rosé - Brut Rosé", "assets/img/champagne/billecartsalmon.png", "Croustillant, fin, le rosé de Billecart Salmon est un champagne subtil et d'une finesse remarquable. Associant des notes de groseilles, de framboises, de baies rouges et des saveurs toastées, léger, élégant et très frais, son effervescence est délicieuse.", "64,00", "C002", "cardBillecart", 0]
 
 //wine
-let cardMeursault = ["Meursault 1er cru Les Charmes", "assets/img/vins/meursault.2017.png", "Ce Premier Cru à la robe or jaune brillante développe gras et richesse tout en laissant une bouche qui s’impose d'une structure volumineuse. Une touche de minéralité attrayante ajoute de la nuance aux arômes de noix, de poire et de zeste d'agrumes torréfiés, on retrouve un bel équilibre puis la finesse reprend ses droits pour guider la fin de bouche qui s’appuie sur une belle tension.", "53,90", "B002"]
-let cardSerrant = ["Couléé de Serrant", "assets/img/vins/coulee-de-serrant.2015png.png", "La Coulée de Serrant, à Savennières, est réputé pour produire des vins blancs exceptionnels. En biodynamie depuis 1981, élevé en fûts de chêne pendant 6 à 8 mois, produit en très petite quantité, la Coulée de Serrant est issue de vignes de plus de 35/40 ans, certaines ayant plus de 80 ans. Vin aromatique, de sa longueur, et de sa superbe minéralité.", "73,90", "B003"]
+
 
 
 //spirit
