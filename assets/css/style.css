@@ -23,6 +23,11 @@
 .bg-pinkwhite{
     background-color: #FFEBEE;
 }
+#test{
+    background-color: rgb(14, 201, 235);
+    width: 30px;
+    height: 50px;
+}
 
 /* bouton up page */
 #btnUpPage {
@@ -34,15 +39,15 @@
     font-size: 25px;
     border: none;
     outline: none;
-    background-color: rgba(85, 30, 31);
+    background-color: rgb(75, 24, 25);
     opacity: 0;
     color: #FFEBEE;
-    padding: 6px 15px 12px 15px;
-    border-radius: 2rem;
+    padding: 5px 15px 10px 15px;
+    border-radius: 3rem;
     cursor: pointer;
 }
 
 #btnUpPage:hover {
     background-color: rgb(61, 24, 25);
-    padding: 1px 15px 17px 15px;
+    padding: 0px 15px 15px 15px;
 }
