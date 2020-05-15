@@ -37,10 +37,10 @@ let cardBollinger = ["Champagne Bollinger", "assets/img/champagne/bollinger.png"
 
 //wine
 let cardPouilly = ["Pouilly-Fumé", "assets/img/vins/pouilly-fume.png", "La Demoiselle de Bourgeois est issu d’une sélection de raisins de Sauvignon haut de gamme. Au-delà des notes florales et de fruits exotiques présentes dès la première olfaction, on retrouve toute l’expression de ce terroir prestigieux à travers une tension minérale tout en élégance.", "21,50", "B001"]
-let cardMeursault = ["Meursault 1er cru Les Charmes", "assets/img/vins/meursault.2017.png", "Ce Premier Cru à la robe or jaune brillante développe gras et richesse tout en laissant une bouche qui s’impose d'une structure volumineuse. Une touche de minéralité attrayante ajoute de la nuance aux arômes de noix, de poire et de zeste d'agrumes torréfiés, on retrouve un bel équilibre puis la finesse reprend ses droits pour guider la fin de bouche qui s’appuie sur une belle tension." "53,90", "B002"]
+let cardMeursault = ["Meursault 1er cru Les Charmes", "assets/img/vins/meursault.2017.png", "Ce Premier Cru à la robe or jaune brillante développe gras et richesse tout en laissant une bouche qui s’impose d'une structure volumineuse. Une touche de minéralité attrayante ajoute de la nuance aux arômes de noix, de poire et de zeste d'agrumes torréfiés, on retrouve un bel équilibre puis la finesse reprend ses droits pour guider la fin de bouche qui s’appuie sur une belle tension.", "53,90", "B002"]
 let cardSerrant = ["Couléé de Serrant","assets/img/vins/coulee-de-serrant.2015png.png", "La Coulée de Serrant, à Savennières, est réputé pour produire des vins blancs exceptionnels. En biodynamie depuis 1981, élevé en fûts de chêne pendant 6 à 8 mois, produit en très petite quantité, la Coulée de Serrant est issue de vignes de plus de 35/40 ans, certaines ayant plus de 80 ans. Vin aromatique, de sa longueur, et de sa superbe minéralité.", "73,90", "B003"]
-let cardJurancon = ["Jurançon Ballet D'automne", "assets/img/vins/jurancon.2018.png", "Un climat caractéristique qui allie rigueur montagnarde et douceur océane., conjugué à la qualité du terroir, précieux mélange d'argile, de silice et de galets, permet d'exprimer la quintessence des cépages nobles du jurançon: le gros et le petit manseng." "12,80", "B004"]
-let cardChinon = ["Chinon Le Fauteuil Rouge", "assets/img/vins/chinon.2017.png", "Un Chinon puissant et complexe, finement toasté avec un grand potentiel. Une très belle bouteille qui sublimera vos repas festifs autour de viandes en sauce et de fromages de caractère. Un vrai coup de coeur." "9,95", "R001"]
+let cardJurancon = ["Jurançon Ballet D'automne", "assets/img/vins/jurancon.2018.png", "Un climat caractéristique qui allie rigueur montagnarde et douceur océane., conjugué à la qualité du terroir, précieux mélange d'argile, de silice et de galets, permet d'exprimer la quintessence des cépages nobles du jurançon: le gros et le petit manseng.", "12,80", "B004"]
+let cardChinon = ["Chinon Le Fauteuil Rouge", "assets/img/vins/chinon.2017.png", "Un Chinon puissant et complexe, finement toasté avec un grand potentiel. Une très belle bouteille qui sublimera vos repas festifs autour de viandes en sauce et de fromages de caractère. Un vrai coup de coeur.", "9,95", "R001"]
 let cardDarons = ["Languedoc Les Darons", "assets/img/vins/les-darons-2017.png", "Les Darons (les Pères en argot) porte bien son nom. Charmeur avec son nez fruité et épicé, équilibré et puissant, il possède des nuances légèrement toastées qui apportent un relief et une générosité des plus appréciables. Un vin solide et sûr de lui qui s’adresse à ceux qui ont suffisamment de bouteille pour apprécier les bonnes choses de la vie.", "6,20", "R002"]
 let cardMarin =  ["Chateau Le Marin","assets/img/vins/chateau-le-marin-2017.png","Situé sur les pentes de Bordeaux, le Château Le Marin est un assembalge généreux fait de 90% de merlot, 5% de cabernet sauvignon et 5% de cabernet franc. Son nez est élégant, parfumé et enivrant avec ses notes de fruits noirs, de violette et de réglisse. En bouche, le vin est structuré mais avec des tanins mûrs et soyeux, les fruits noirs comme la cerise et la prune dominent, soutenus par de subtiles notes de chêne et d'épices . Un vin de caractère et une affaire imbattable.", "5,25", "R003"]
 
@@ -95,12 +95,12 @@ function createCard(type) {
         <div class="card-body text-darkwine">
             <h5 class="card-title">${type[0]}</h5>
             <p class="card-text">${type[2]}</p>
-            <a href="#" class="btn btn-dark text-pinkwhite bg-pinkdark" data-toggle="modal" data-target="#presents">Ajouter au Panier</a>
+            <a href="#" class="btn btn-dark text-pinkwhite bg-pinkdark" data-toggle="modal" data-target="#${type[4]}">Ajouter au Panier</a>
             <span class="badge text-pinkwhite bg-darkwine">${type[3]}€</span>
         </div>
         </div>
     
-        <div class="modal fade" id="presents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="${type[4]}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content text-darkwine">
@@ -111,10 +111,13 @@ function createCard(type) {
                     </button>
                 </div>
                 <div class="modal-body">
-                  <p>${type[2]} <i>${type[4]}</i></p>
-                  <p>Voulez vous ajouter cet article dans votre panier ?</p>
+                  <p>${type[2]} </p>
+                  <p>Voulez vous ajouter cet article dans votre panier ?<br>
+                  <i>ref: ${type[4]}</i>
+                  </p>
                 </div>
                 <div class="modal-footer">
+                
                     <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" data-dismiss="modal">Fermer</button>
                     <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine">Mettre dans le panier</button>
                 </div>
