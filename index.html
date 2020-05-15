@@ -25,46 +25,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Vins & Champagnes
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Vins Rouges</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Vins Blancs</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Vins Rosés</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Champagnes</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="champagne">Champagnes</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Spiritueux
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Sections 1</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Section 2s</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Section 3</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="wine">Vins</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Idées cadeaux
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Verres</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Caraffe</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Plateaux</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="spirit">Spiritueux</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -84,141 +52,35 @@
         </div>
     </nav>
     <!-- ITEMS -->
-    <!-- VINS -->
-    <section>
-        <div class="card" style="width: 18rem;">
-            <img src="assets/img/vins/chinon.2017.png" class="card-img-top" alt="chinon">
-            <div class="card-body">
-                <h5 class="card-title">CHINON LE FAUTEUIL ROUGE 2017</h5>
-                <p class="card-text">Un Chinon puissant et complexe, finement toasté avec un grand potentiel. Une très belle bouteille qui sublimera vos repas festifs autour de viandes en sauce et de fromages de caractère. Un vrai coup de cœur !</p>
-                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#winemodal">Ajouter au Panier</a>
-                <span class="badge badge-secondary">9,95€</span>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="winemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Chinon Le Fauteuil Rouge 2017</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                     Voulez vous ajouter cet article dans votre panier ?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button type="button" class="btn btn-primary">Mettre dans le panier</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SPIRITUEUX -->
-    <section>
-        <div class="card" style="width: 18rem;">
-            <img src="assets/img/spiritueux/talisker.png" class="card-img-top" alt="talisker">
-            <div class="card-body">
-                <h5 class="card-title">Single Malt Talisker 10 ans</h5>
-                <p class="card-text">Unique single malt de l’île de Skye, Talisker 10 ans possède un caractère marin et épicé hors du commun !</p>
-                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#spiritueux">Ajouter au Panier</a>
-                <span class="badge badge-secondary">44,90€</span>
-            </div>
-        </div>
-        <div class="modal fade" id="spiritueux" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Talisker 10 Ans</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                      Voulez vous ajouter cet article dans votre panier ?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button type="button" class="btn btn-primary">Mettre dans le panier</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- IDEE CADEAU -->
-    <section>
-        <div class="card" style="width: 18rem;">
-            <img src="assets/img/champagne/bollinger.png" class="card-img-top" alt="coffret007">
-            <div class="card-body">
-                <h5 class="card-title">Coffret "James Bond" Bollinger</h5>
-                <p class="card-text">La Maison Bollinger dévoile pour cet évènement le millésime 2011, exclusivement issus de grands crus de Pinot Noir du village d'Ay. C'est la premère fois que la maison élabore une cuvée issue uniquement de ce cru historique ou la maison est implantée depuis sa création en 1829. Avis aux collectionneurs !</p>
-                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#presents">Ajouter au Panier</a>
-                <span class="badge badge-secondary">220€</span>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="presents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Coffret 007 2011</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                      Voulez vous ajouter cet article dans votre panier ?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button type="button" class="btn btn-primary">Mettre dans le panier</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- DEFILEMENT -->
-    <section>
-        <div><!-- start slipsum code -->
+   
+      <div class="container">
+        <div class="row bg-pinkdark text-darkwine justify-content-center p-2" id="mainArea">
 
-            <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends. </p>
-            
-            <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
-            
-            <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
-            
-            <p>Normally, both your asses would be dead as fried chicken, but you happen to pull this crap while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass. </p>
-            
-            <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.  </p>
-            
-            <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
-            
-            <!-- end slipsum code --></div>
+          
+        </div>
+      </div>
     </section>
+
     <!-- BARRE COLOREE FOOTER -->
     <footer>
-        <div class="container bg-danger">
-            <div class="row bg-secondary justify-content-center text-center p-2">
-                <div class="col-3 py-2">
+        <div class="container-fluid pt-5">
+            <div class="row bg-darkwine text-pinkwhite justify-content-center text-center p-2">
+                <div class="col-2 py-2">
                     Service livraison
                 </div>
-                <div class="col-3 py-2">
+                <div class="col-2 py-2">
                     Paiement sécurisé
                 </div>
-                <div class="col-3 py-2">
+                <div class="col-2 py-2">
                     Contacts
                 </div>
             </div>
-            <div class="row bg-light justify-content-center text-center p-2">
-                <div class="col-10 py-2">
-                    Mentions légales
+            <div class="row bg-pinkdark text-pinkwhite justify-content-center text-center p-2">
+                <div class="col-8 py-2">
+                  <span> © Mentions légales 2020, Team Sabrina.</span>
                 </div>
             </div>
+        </div>
     </footer>
     <button onclick="topFunction()" id="btnUpPage" title="Go to top">▲</button>
 
@@ -234,6 +96,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/jstest.js"></script>
 </body>
 
 </html>
