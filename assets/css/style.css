@@ -23,6 +23,11 @@
 .bg-pinkwhite{
     background-color: #FFEBEE;
 }
+#test{
+    background-color: rgb(14, 201, 235);
+    width: 30px;
+    height: 50px;
+}
 
 /* bouton up page */
 #btnUpPage {
