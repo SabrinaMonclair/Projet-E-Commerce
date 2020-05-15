@@ -29,17 +29,26 @@ let idMainArea = document.getElementById("mainArea");
 
 // EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001"]
 //champagne
-let cardNom = ["Champagne Deutz", "assets/img/champagne/Deutz.png", "Tirant sa parfaite harmonie des 3 cépages champenois qui interviennent à parts égales et constantes dans son assemblage, ce Deutz Brut Classic revêt une jolie robe or agrémentée de bulles fines et légères. Un champagne avec une palette complexe, une texture soyeuse avec une intense fraîcheur.", "33,90", "C001"]
-
+let cardDeutz = ["Champagne Deutz", "assets/img/champagne/Deutz.png", "Tirant sa parfaite harmonie des 3 cépages champenois qui interviennent à parts égales et constantes dans son assemblage, ce Deutz Brut Classic revêt une jolie robe or agrémentée de bulles fines et légères. Un champagne avec une palette complexe, une texture soyeuse avec une intense fraîcheur.", "33,90", "C001"]
+let cardRuinart = ["Champagne Ruinart", "assets/img/champagne/ruinart.png", "R de Ruinart Brut est l’expression première du goût de Ruinart. Ce champagne ou tout n’est que fraîcheur et équilibre révèle une superbe intensité olfactive sur un fond brioché et biscuité.", "46,50", "C002"]
+let cardBillecart = ["Champagne Billecart Salmon Rosé", "assets/img/champagne/billecartsalmon.png", "Croustillant, fin, le rosé de Billecart Salmon est un champagne subtil et d'une finesse remarquable. Associant des notes de groseilles, de framboises, de baies rouges et des saveurs toastées, léger, élégant et très frais, son effervescence est délicieuse.", "64,00", "C003"]
+let cardBollinger = ["Champagne Bollinger", "assets/img/champagne/bollinger.png", "La Maison Bollinger dévoile pour cet évènement le millésime 2011, exclusivement issus de grands crus de Pinot Noir du village d'Ay. C'est la premère fois que la maison élabore une cuvée issue uniquement de ce cru historique ou la maison est implantée depuis sa création en 1829. Avis aux collectionneurs!", "220", "C004"]
 
 
 //wine
-let cardNom2 = ["nom", "champage/img.png", "description", "prix", "ref-0001"]
+let cardPouilly = ["Pouilly-Fumé", "assets/img/vins/pouilly-fume.png", "La Demoiselle de Bourgeois est issu d’une sélection de raisins de Sauvignon haut de gamme. Au-delà des notes florales et de fruits exotiques présentes dès la première olfaction, on retrouve toute l’expression de ce terroir prestigieux à travers une tension minérale tout en élégance.", "21,50", "B001"]
+let cardMeursault = ["Meursault 1er cru Les Charmes", "assets/img/vins/meursault.2017.png", "Ce Premier Cru à la robe or jaune brillante développe gras et richesse tout en laissant une bouche qui s’impose d'une structure volumineuse. Une touche de minéralité attrayante ajoute de la nuance aux arômes de noix, de poire et de zeste d'agrumes torréfiés, on retrouve un bel équilibre puis la finesse reprend ses droits pour guider la fin de bouche qui s’appuie sur une belle tension." "53,90", "B002"]
+let cardSerrant = ["Couléé de Serrant","assets/img/vins/coulee-de-serrant.2015png.png", "La Coulée de Serrant, à Savennières, est réputé pour produire des vins blancs exceptionnels. En biodynamie depuis 1981, élevé en fûts de chêne pendant 6 à 8 mois, produit en très petite quantité, la Coulée de Serrant est issue de vignes de plus de 35/40 ans, certaines ayant plus de 80 ans. Vin aromatique, de sa longueur, et de sa superbe minéralité.", "73,90", "B003"]
+let cardJurancon = ["Jurançon Ballet D'automne", "assets/img/vins/jurancon.2018.png", "Un climat caractéristique qui allie rigueur montagnarde et douceur océane., conjugué à la qualité du terroir, précieux mélange d'argile, de silice et de galets, permet d'exprimer la quintessence des cépages nobles du jurançon: le gros et le petit manseng." "12,80", "B004"]
+let cardChinon = ["Chinon Le Fauteuil Rouge", "assets/img/vins/chinon.2017.png", "Un Chinon puissant et complexe, finement toasté avec un grand potentiel. Une très belle bouteille qui sublimera vos repas festifs autour de viandes en sauce et de fromages de caractère. Un vrai coup de coeur." "9,95", "R001"]
+let cardDarons = ["Languedoc Les Darons", "assets/img/vins/les-darons-2017.png", "Les Darons (les Pères en argot) porte bien son nom. Charmeur avec son nez fruité et épicé, équilibré et puissant, il possède des nuances légèrement toastées qui apportent un relief et une générosité des plus appréciables. Un vin solide et sûr de lui qui s’adresse à ceux qui ont suffisamment de bouteille pour apprécier les bonnes choses de la vie.", "6,20", "R002"]
+let cardMarin =  ["Chateau Le Marin","assets/img/vins/chateau-le-marin-2017.png","Situé sur les pentes de Bordeaux, le Château Le Marin est un assembalge généreux fait de 90% de merlot, 5% de cabernet sauvignon et 5% de cabernet franc. Son nez est élégant, parfumé et enivrant avec ses notes de fruits noirs, de violette et de réglisse. En bouche, le vin est structuré mais avec des tanins mûrs et soyeux, les fruits noirs comme la cerise et la prune dominent, soutenus par de subtiles notes de chêne et d'épices . Un vin de caractère et une affaire imbattable.", "5,25", "R003"]
 
 
 
 //spirit
-let cardNom3 = ["name", "champage/img.png", "description", "prix", "ref-0001"]
+
+ let cardTalisker = ["Talisker 10 ans", "assets/img/spiritueux/talisker.png", "Unique single malt de l’île de Skye, Talisker 10 ans possède un caractère marin et épicé hors du commun", "44,90", "S001"]
 
 
 
@@ -52,24 +61,28 @@ idSpirit.onclick = showCardSpirit;
 
 function showCardChampagne() {
   idMainArea.innerText = "";
-  createCard(cardNom);
-  createCard(cardNom2);
-  createCard(cardNom3);
+  createCard(cardDeutz);
+  createCard(cardRuinart);
+  createCard(cardBillecart);
+  createCard(cardBollinger);
 }
 
 function showCardWine() {
   idMainArea.innerText = "";
-  createCard(cardNom);
-  createCard(cardNom2);
-  createCard(cardNom3);
+  createCard(cardPouilly);
+  createCard(cardMeursault);
+  createCard(cardSerrant);
+  createCard(cardJurancon);
+  createCard(cardChinon);
+  createCard(cardDarons);
+  createCard(cardMarin);
 }
 
 
 function showCardSpirit() {
   idMainArea.innerText = "";
-  createCard(cardNom);
-  createCard(cardNom2);
-  createCard(cardNom3);
+  createCard(cardTalisker);
+
 
 }
 
