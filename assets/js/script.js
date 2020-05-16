@@ -27,6 +27,8 @@ let idWine = document.getElementById("wine");
 let idSpirit = document.getElementById("spirit");
 let idMainArea = document.getElementById("mainArea");
 let idCartList = document.getElementById("cartlist");
+let totalPrice = 0;
+let idBuyTotal = document.getElementById("buytotal");
 
 // EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001","cardNom", 0]
 //champagne
@@ -66,6 +68,7 @@ idChampagne.onclick = showCardChampagne;
 idWine.onclick = showCardWine;
 idSpirit.onclick = showCardSpirit;
 
+// creation de la page champages avec toute les cards
 function showCardChampagne() {
   idMainArea.innerText = "";
   createCard(cardSiecle);
@@ -76,13 +79,14 @@ function showCardChampagne() {
   createCard(cardSalon);
   createCard(cardTaittinger);
   createCard(cardKrugR);
-  
+
   window.scrollTo({
     top: 500,
     behavior: 'smooth'
   });
 }
 
+// creation de la page vins avec toute les cards
 function showCardWine() {
   idMainArea.innerText = "";
 
@@ -105,10 +109,10 @@ function showCardWine() {
   });
 }
 
-
+// creation de la page Spiriteux avec toute les cards
 function showCardSpirit() {
   idMainArea.innerText = "";
- createCard()
+  createCard()
 
   window.scrollTo({
     top: 500,
@@ -116,7 +120,7 @@ function showCardSpirit() {
   });
 }
 
-
+// creation de la card et de sa modale
 function createCard(type) {
   idMainArea.innerHTML +=
     `   <div class="col-6 col-sm-5 col-md-4 col-lg-3 py-2">
@@ -161,13 +165,13 @@ function createCard(type) {
       </div>`;
 }
 
+// ajout d'une ligne de tableau dans la modal panier en fonction de la card 
 function addToBasket(type) {
-
+  let idnumber = document.getElementById(`number${type[4]}`);
   if (type[6] === 0) {
-    console.log(type[6] + "oui");
     type[6]++;
     idCartList.innerHTML +=
-  ` <tr id="table${type[4]}">
+      ` <tr id="table${type[4]}">
       <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 4em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
       <td class="h5"><b>${type[3]}€</b></td>
@@ -175,53 +179,42 @@ function addToBasket(type) {
       <td><button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button><button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button></td>
       <td class="h5" id="result${type[4]}"><b>${type[3]} €</b></td>
     </tr>`;
-
   } else {
     type[6]++;
-    let idnumber = document.getElementById(`number${type[4]}`);
     idnumber.innerText = type[6];
-    console.log(type[6] + "non");
   }
-  let idnumber = document.getElementById(`number${type[4]}`);
-
-  // let valueUp = document.getElementById(`Up${type[4]}`);
-  // let valueDown = document.getElementById(`Down${type[4]}`);
-
-  // document.getElementById(`Up${type[4]}`).addEventListener("click", function() {
-  //   type[6]++;
-  //   console.log("salut");
-  //   idnumber.innerText = type[6];
-
-  // })
-
-  // document.getElementById(`Down${type[4]}`).addEventListener("click", function() {
-  //   type[6]--;
-  //   console.log(type[6] + "au revoir");
-  //   idnumber.innerText = type[6]; 
-  // })
+  //ajout du prix sur le total global
+  totalPrice = Number(totalPrice) + Number(type[3]);
+  idBuyTotal.innerText = "Paiement: " + Number(totalPrice) + " €";
 
 }
-let totalPriceArray = [];
-let idBuyTotal = document.getElementById("buytotal");
 
-
-function functionBtnUp(type){
+// bouton + de la modale panier
+function functionBtnUp(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
+
   type[6]++;
   idnumber.innerText = type[6];
-  idResult.innerText = type[3]*type[6] +" €";
- 
+  idResult.innerText = type[3] * type[6] + " €";
+    //ajout du prix sur le total global
+  totalPrice = Number(totalPrice) + Number(type[3]);
+  idBuyTotal.innerText = "Paiement: " + Number(totalPrice) + " €";
 }
-function functionBtnDown(type){
+
+// bouton - de la modale panier ( si le nombre de bouteil = 0, alors la ligne du tableau est suppimé)
+function functionBtnDown(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
   let idTable = document.getElementById(`table${type[4]}`);
 
   type[6]--;
-  idnumber.innerText = type[6]; 
-  idResult.innerText = type[3]*type[6] +" €";
- if (type[6]<1){
-  idTable.innerHTML = "";
- }
+  idnumber.innerText = type[6];
+  idResult.innerText = type[3] * type[6] + " €";
+  if (type[6] < 1) {
+    idTable.innerHTML = "";
+  }
+  //moins le prix sur le total global
+  totalPrice = Number(totalPrice) - Number(type[3]);
+  idBuyTotal.innerText = "Paiement: " + Number(totalPrice) + " €";
 }
