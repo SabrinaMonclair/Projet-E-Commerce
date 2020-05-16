@@ -108,7 +108,7 @@ function showCardWine() {
 
 function showCardSpirit() {
   idMainArea.innerText = "";
- 
+ createCard()
 
   window.scrollTo({
     top: 500,
