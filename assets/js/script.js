@@ -125,8 +125,6 @@ function createCard(type) {
                 
                 <span class="text-pinkwhite bg-darkwine p-2 h3 text-center"><i><b>${type[3]} </b>€/u</i></span>
                 <div class="modal-footer justify-content-center">
-                
-                
                     <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" data-dismiss="modal">Fermer</button>
                     <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
                 </div>
@@ -146,8 +144,8 @@ function addToBasket(type) {
       <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 2em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
       <td>${type[3]}€</td>
-      <td id="number${type[5]}">${type[6]}</td>
-    </tr>`;
+      <button type="button" id="numberUp">+</button><td id="number${type[5]}">${type[6]}</td><button type="button" id="numberDown" min= "0">-</button>
+    </tr>`
 
   } else {
     type[6]++;
@@ -155,4 +153,23 @@ function addToBasket(type) {
     idnumber.innerText = type[6]
     console.log(type[6] + "non")
   }
+  let idnumber = document.getElementById(`number${type[5]}`)
+
+
+  let valueUp = document.getElementById("numberUp");
+  let valueDown = document.getElementById("numberDown");
+
+  valueUp.addEventListener("click", function() {
+    type[6]++;
+    console.log("salut");
+    idnumber.innerText = type[6];
+
+  })
+
+  valueDown.addEventListener("click", function() {
+    type[6]--;
+    console.log(type[6] + "au revoir");
+    idnumber.innerText = type[6]; 
+  })
+
 }
