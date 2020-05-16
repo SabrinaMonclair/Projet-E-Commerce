@@ -7,17 +7,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Site e-commerce Spiritueux</title>
+    <link href="assets\img\iconeraisin.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <title>Vinothéque</title>
 </head>
 
 <body>
     <!-- HEADER -->
-    <header>
 
+    <header>
+        <div id="img-accueil" class="container-fluid">
+            <div class="row justify-content-lg-start justify-content-center text-center">
+                <div class="col-12 justify-content-center text-center">
+                    <h1 class="text-pinkwhite" id="titreHeader">Vinothéque</h1>
+                </div>
+            </div>
+        </div>
     </header>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Les Spirit'eux</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="toppage">
+        <a class="navbar-brand" href=""><img src="assets\img\iconeraisin.png" alt="iconRaisin" title="Les Spirit'eux"
+                style="width: 2em; height: 2em;"> Vinothéque</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,234 +35,125 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Vins & Champagnes
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Vins rouge</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Vins blancs</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Vins rosés</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Champagnes</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#toppage" id="champagne">Champagnes</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Spiritueux
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Sections 1</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Section 2s</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Section 3</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#toppage" id="wine">Vins</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Idées cadeaux
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Verres</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Caraffe</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Plateaux</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#toppage" id="spirit">Spiritueux</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
             </form>
-            <a href="" class="ml-3 text-dark ">
-                <svg class="bi bi-bucket" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M8 1.5A4.5 4.5 0 003.5 6h-1a5.5 5.5 0 1111 0h-1A4.5 4.5 0 008 1.5z"
-                        clip-rule="evenodd" />
-                    <path fill-rule="evenodd"
-                        d="M1.61 5.687A.5.5 0 012 5.5h12a.5.5 0 01.488.608l-1.826 8.217a1.5 1.5 0 01-1.464 1.175H4.802a1.5 1.5 0 01-1.464-1.175L1.512 6.108a.5.5 0 01.098-.42zm1.013.813l1.691 7.608a.5.5 0 00.488.392h6.396a.5.5 0 00.488-.392l1.69-7.608H2.624z"
-                        clip-rule="evenodd" />
+            <a href="#" data-toggle="modal" data-target="#cartmodal" class="ml-3 text-dark ">
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="2em" height="2em"
+                    viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                    <path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
+			            c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7
+			            c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
+			            c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z" />
                 </svg>
             </a>
         </div>
     </nav>
     <!-- ITEMS -->
-    <!-- VINS -->
-    <div id="cards">
-        <section>
-            <div class="card" style="width: 18rem;">
-                <img src="assets/img/vins/buisson-renard.png" class="card-img-top" alt="Buisson-renard">
-                <div class="card-body">
-                    <h5 class="card-title">WINE</h5>
-                    <p class="card-text">PLACEHOLDER WINE.</p>
-                    <a href="#" class="btn btn-primary commandbutton" data-toggle="modal" data-target="#winemodal"
-                        data-value="1.35">Achetez-la!</a>
-                    <span class="badge badge-secondary">1€35</span>
-                    <input type="number" class="inputnumber">
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="winemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">SPIRITUEUX</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            PLACEHOLDER TEXT
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            <button type="button" class="btn btn-primary">Mettre dans le panier</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- SPIRITUEUX -->
-        <section class="cards">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/img/vins/buisson-renard.png" class="card-img-top" alt="Buisson-renard">
-                <div class="card-body">
-                    <h5 class="card-title">Spiritueux</h5>
-                    <p class="card-text">Whisky? Gin? Martini Vodka au shaker et pas a la cuillère? Faites votre choix.
-                    </p>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#spiritueux">Achetez TOUT!</a>
-                    <span class="badge badge-secondary">Cher€</span>
-                </div>
-            </div>
-            <div class="modal fade" id="spiritueux" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">SPIRITUEUX</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            PLACEHOLDER TEXT
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            <button type="button" class="btn btn-primary">Mettre dans le panier</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </section>
-        <!-- IDEE CADEAU -->
-        <section class="cards">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/img/vins/buisson-renard.png" class="card-img-top" alt="Buisson-renard">
-                <div class="card-body">
-                    <h5 class="card-title"> Cadeau 1</h5>
-                    <p class="card-text">PLACEHOLDER</p>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#presents">Achetez-la!</a>
-                    <span class="badge badge-secondary">Test€</span>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="presents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Cadeaux</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            PLACEHOLDER TEXT
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            <button type="button" class="btn btn-primary">Mettre dans le panier</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="container">
+        <div class="row bg-pinkdark text-pinkwhite justify-content-center p-2" id="mainArea">
+            <h2>presentation</h2>
+            <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the
+                world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't
+                know exactly when we turned on each other, but I know that seven of us survived the slide... and only
+                five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that
+                killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+            <h2>presentation</h2>
+            <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the
+                world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't
+                know exactly when we turned on each other, but I know that seven of us survived the slide... and only
+                five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that
+                killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+            <h2>presentation</h2>
+            <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the
+                world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't
+                know exactly when we turned on each other, but I know that seven of us survived the slide... and only
+                five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that
+                killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+
+
+        </div>
     </div>
     </section>
-    <!-- DEFILEMENT -->
-    <section>
-        <div>
-            <!-- start slipsum code -->
 
-            <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than
-                mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same
-                way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it
-                may seem, we are connected, you and I. We're on the same curve, just on opposite ends. </p>
-
-            <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of
-                evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley
-                of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike
-                down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My
-                brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
-
-            <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of
-                evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley
-                of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike
-                down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My
-                brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
-
-            <p>Normally, both your asses would be dead as fried chicken, but you happen to pull this crap while I'm in a
-                transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it
-                don't belong to me. Besides, I've already been through too much shit this morning over this case to hand
-                it over to your dumb ass. </p>
-
-            <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most
-                popular gun in American crime. Do you believe that shit? It actually says that in the little book that
-                comes with it: the most popular gun in American crime. Like they're actually proud of that shit. </p>
-
-            <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of
-                evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley
-                of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike
-                down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My
-                brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
-
-            <!-- end slipsum code -->
-        </div>
-    </section>
     <!-- BARRE COLOREE FOOTER -->
     <footer>
-        <div class="container bg-danger">
-            <div class="row bg-secondary justify-content-center text-center p-2">
-                <div class="col-3 py-2">
+        <div class="container-fluid pt-5">
+            <div class="row bg-darkwine text-pinkwhite justify-content-center text-center p-2">
+                <div class="col-2 py-2">
                     Service livraison
                 </div>
-                <div class="col-3 py-2">
-                    Paiement sécurisé
+                <div class="col-2 py-2">
+                    Paiment Securisé
                 </div>
-                <div class="col-3 py-2">
+                <div class="col-2 py-2">
                     Contacts
                 </div>
             </div>
-            <div class="row bg-light justify-content-center text-center p-2">
-                <div class="col-10 py-2">
-                    Mentions légales
+            <div class="row bg-pinkdark text-pinkwhite justify-content-center text-center p-2">
+                <div class="col-8 py-2">
+                    <span> © Mentions légales 2020, Team SoundBoard.</span>
                 </div>
             </div>
+        </div>
     </footer>
+    <!-- bouton go to top -->
     <button onclick="topFunction()" id="btnUpPage" title="Go to top">▲</button>
 
+    <!-- modal panier -->
+    <div class="modal fade" id="cartmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title h5">Panier</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prix/Unitaire</th>
+                            <th scope="col">Quantité</th>
+                          </tr>
+                        </thead>
+                        <tbody id="cartlist">
+                          
+                        </tbody>
+                      </table>
+
+
+
+
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">passer a la caisse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- BOOTSTRAP + SCRIPT JS -->
-    <script src="assets/js/script.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -262,6 +163,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/jstest.js"></script>
 </body>
 
 </html>

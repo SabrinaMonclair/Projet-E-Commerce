@@ -1,14 +1,42 @@
-
-
-
-
-.test{
-    background-color: aquamarine;
-    width: 50%;
-    height: 100vh;
+#img-accueil{
+    width: 100%;
+    height: 60vh;
+    background-image: url(../img/imgheader2.jpg);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#titreHeader{
+    font-size: 4rem;
+    padding-top: 10rem;
+    font-family: 'Parisienne', cursive;
 }
 
-
+.text-darkwine{
+    color: #3A2C32;
+}
+.text-pinklight{
+    color: #EE8E96;
+}
+.text-pinkwhite{
+    color: #FFEBEE;
+}
+.bg-darkwine{
+    background-color: #3A2C32;
+}
+.bg-pinkdark{
+    background-color: #551E1F;
+}
+.bg-pinkmiddle{
+    background-color: #CE4E56;
+}
+.bg-pinklight{
+    background-color: #EE8E96;
+}
+.bg-pinkwhite{
+    background-color: #FFEBEE;
+}
 
 /* bouton up page */
 #btnUpPage {
@@ -20,16 +48,15 @@
     font-size: 25px;
     border: none;
     outline: none;
-    background-color: rgba(46, 32, 109, 0.8);
+    background-color: rgb(75, 24, 25);
     opacity: 0;
-    color: white;
-    padding: 6px 12px 12px 12px;
-    border-radius: 2rem;
-    transition: padding 500ms, opacity 1s, bottom 1s;
+    color: #FFEBEE;
+    padding: 5px 15px 10px 15px;
+    border-radius: 3rem;
     cursor: pointer;
 }
 
 #btnUpPage:hover {
-    background-color: rgba(19, 12, 54, 0.8);
-    padding: 1px 12px 17px 12px;
+    background-color: rgb(61, 24, 25);
+    padding: 0px 15px 15px 15px;
 }
