@@ -156,8 +156,8 @@ function createCard(type) {
                 
                 <span class="text-pinkwhite bg-darkwine p-2 h3 text-center"><i><b>${type[3]} </b>€</i></span>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
+                    <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
                 </div>
             </div>
         </div>
@@ -185,8 +185,7 @@ function addToBasket(type) {
   }
   //ajout du prix sur le total global
   totalPrice = Number(totalPrice) + Number(type[3]);
-  idBuyTotal.innerText = "Paiement: " + Number(totalPrice) + " €";
-
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
 
 // bouton + de la modale panier
@@ -196,10 +195,10 @@ function functionBtnUp(type) {
 
   type[6]++;
   idnumber.innerText = type[6];
-  idResult.innerText = type[3] * type[6] + " €";
+  idResult.innerHTML = "<b>" + type[3] * type[6] + " €</b>";
     //ajout du prix sur le total global
   totalPrice = Number(totalPrice) + Number(type[3]);
-  idBuyTotal.innerText = "Paiement: " + Number(totalPrice) + " €";
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
 
 // bouton - de la modale panier ( si le nombre de bouteil = 0, alors la ligne du tableau est suppimé)
@@ -210,11 +209,11 @@ function functionBtnDown(type) {
 
   type[6]--;
   idnumber.innerText = type[6];
-  idResult.innerText = type[3] * type[6] + " €";
+  idResult.innerHTML = "<b>" + type[3] * type[6] + " €</b>";
   if (type[6] < 1) {
     idTable.innerHTML = "";
   }
   //moins le prix sur le total global
   totalPrice = Number(totalPrice) - Number(type[3]);
-  idBuyTotal.innerText = "Paiement: " + Number(totalPrice) + " €";
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
