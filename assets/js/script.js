@@ -44,6 +44,14 @@ let cardRiesling = ["Riesling Clos du Saint Hune - Domaine Trimbach - 2002", "as
 let cardSilex = ["Silex Pouilly Fumé - Domaine Didier Dagueneau - 2005", "assets/img/vins/silex.png", "Très pur, débordant d'énergie saline et de fraîcheur, il s'inscrit dans un univers aromatique à part ; zan, fleurs blanches, notes racinaires de tarragone.Son profil fuselé et tonique encadre une vraie mâche et une densité vigoureuse jusqu'en finale.Minéralité, puissance, race et complexité aromatique témoignent d'un terroir d'exception.", "210", "B002", "cardSilex", 0]
 let cardErmitage = ["Ermitage de L'Orée - Domaine Michel Chapoutier - 2009", "assets/img/vins/ermitage.png", "Issu de vignes de Marsanne âgée de 60 à 70 ans, De L’Orée propose une robe jaune or intense, aux reflets dorés et verts. Son nez, extrêmement aromatique et intense oscille entre arômes de cailloux chauds, de caramel, de fruits très mûrs, de citron, d’acacia et d’aubépine. La bouche, grasse, ample et très complexe est chargée de notes de fruits mûrs, d’épices et de grillé avant de terminer sur une belle longueur et une finale fraîche.", "290", "B003", "cardErmitage", 0]
 let cardMontrachet = ["Montrachet Grand Cru - Domaine Baron Thenard - 2012", "assets/img/vins/montrachet.png", "La grandeur et la richesse de ce Montrachet sont impressionnantes des saveurs si délicieuses qui offrent une longueur remarquable. Le plus réputé de toute la Bourgogne. C'est un vin à la puissance aromatique hors norme. Très beau boisé, présent mais suffisament bien intégré pour ne pas masquer les arômes subtiles de fleurs blanches, de pommes et d'épices douces.", "420", "B004", "cardMontrachet", 0]
+let cardTrevallon = ["Domaine de Trevallon - Domaine Dürrbach - Alpilles 2014", "assets/img/vins/trevallon.png", "Un vin de pays devenu mythique, en incluant à parité le sauvignon et la syrah, Eloi Dürrbach bâtit un vin aux tanins frais, élégants et vibrants. Portée par une forte complexité aromatique, cette cuvée à la fois charnue et soyeuse en fera un magnifique vin de gastronomie.", "110", "R001", "cardTrevallon", 0]
+let cardLambrays = ["Clos Des Lambrays Grand Cru - Domaine Des Lambrays - 2002", "assets/img/vins/lambrays.png", "Issu d’un terroir complexe chargé d’histoire ce fabuleux Clos des Lambrays est convoité par les amateurs passionnés ! Corsé, souple et intense, ce vin offre une harmonie d’arômes et un équilibre magistral. Quelques années de garde sublimeront ce vin et seront la promesse d'une dégustation inoubliable.", "270", "R002", "cardLambrays", 0]
+let cardRaven = ["Domaine Sine Qua Non - Raven 3 Series 2006 - Californie USA", "assets/img/vins/raven.png", "Sine Qua Non se concentre sur les cépages rhodaniens : la Syrah, la Grenache et la Roussanne notamment. La série Raven est un assemblage de 93% Syrah, 5% Grenache et 2% Viognier poiur une durée de deux ans en fut de chêne français. Offrant une couleur pourpre dense, des fruits magnifiques et un doux parfum de graphite, de mûres, de bleuets et de charbon de bois.", "540", "R003", "cardRaven", 0]
+let cardCheval = ["Château Cheval Blanc 2010 - Saint-Emilion Grand Cru Classé A", "assets/img/vins/cheval.png", "Le plus célèbre des Saint-Emilion Grand Cru, et l’un des vins français les plus réputés au monde, s’est construit une réputation sans faille depuis la seconde moitié du XXème siècle grâce à sa régularité exemplaire. Le Château signe un millésime 2010 légendaire et inoubliable au potentiel de garde considérable.Avec une parfaite combinaison entre fraîcheur, concentration et finesse, ce vin est tout simplement extraordinaire", "760", "R004", "cardCheval", 0]
+let cardPibarnon = ["Chateau de Pibarnon - Bandol - Provence Rosé 2009", "assets/img/vins/pibarnon.png", "Tout d'abord, un terroir exceptionnel. Ensuite, une texture et une matière de grande finesse. Un vin charnu, fruité, entier et gourmand à la fois. Produit en petite quantité, ce rosé possède une superbe typicité, une référence mondiale.", "90", "RO001", "cardPibarnon", 0]
+let cardSine = ["Domaine Sine Qua Non - Autrement Dit 2006 - Rosé Californie USA", "assets/img/vins/sine.png", "Sine Qua Non se concentre sur les cépages rhodaniens", "270", "RO002", "cardSine", 0]
+let cardBabylone = ["Jardins De Babylone - Didier Dagueneau -  Jurançon 2014", "assets/img/vins/babylone.png", "A Jurançon, le vignoble couvre 3 hectares en terrasses, exclusivement plantés de Petit Manseng.Une robe jaune foncée, reflet or pâle. Elle emprunte ses notes exotiques aux vins alsaciens, avec des embruns de caramel et de coing pour beaucoup de gourmandise. Ce vin de petit manseng possède un esprit singulier, riche de son onctuosité et délectable jusqu’à la dernière goutte par sa fraicheur", "112", "M001", "cardBabylone", 0]
+let cardYquem = ["Chateau Yquem 2001 - Sauternes 1er Cru Classé Supérieur", "assets/img/vins/yquem.png", "Majestueux dans sa tunique vieil or, il joue subtilement de ses parfums de fruit de la Passion, d'abricot, d'agrumes et de figue qu'il met en rivalité avec des fleurs et une pointe de muscade. A l'aération, ceux-ci deviennent de plus en plus présents et dominent le bouquet, complétés de pointes de vanille et de coing. Dense et ample, l'attaque s'ouvre sur un palais rond, enveloppant, riche, mais équilibré. Longue, la finale revéle des fruits frais et des notes d'abricot confit.", "630", "M002", "cardYquem", 0]
 
 
 //spirit
@@ -77,14 +85,20 @@ function showCardWine() {
   createCard(cardSilex);
   createCard(cardErmitage);
   createCard(cardMontrachet);
-
-
+  createCard(cardTrevallon);
+  createCard(cardLambrays);
+  createCard(cardRaven);
+  createCard(cardCheval);
+  createCard(cardPibarnon);
+createCard(cardSine);
+  createCard(cardBabylone);
+  createCard(cardYquem);
 }
 
 
 function showCardSpirit() {
   idMainArea.innerText = "";
-  createCard(cardTalisker);
+ 
 
 
 }
