@@ -76,6 +76,11 @@ function showCardChampagne() {
   createCard(cardSalon);
   createCard(cardTaittinger);
   createCard(cardKrugR);
+  
+  window.scrollTo({
+    top: 500,
+    behavior: 'smooth'
+  });
 }
 
 function showCardWine() {
@@ -90,9 +95,14 @@ function showCardWine() {
   createCard(cardRaven);
   createCard(cardCheval);
   createCard(cardPibarnon);
-createCard(cardSine);
+  createCard(cardSine);
   createCard(cardBabylone);
   createCard(cardYquem);
+
+  window.scrollTo({
+    top: 500,
+    behavior: 'smooth'
+  });
 }
 
 
@@ -100,7 +110,10 @@ function showCardSpirit() {
   idMainArea.innerText = "";
  
 
-
+  window.scrollTo({
+    top: 500,
+    behavior: 'smooth'
+  });
 }
 
 
