@@ -150,7 +150,7 @@ function createCard(type) {
                   </p>
                 </div>
                 
-                <span class="text-pinkwhite bg-darkwine p-2 h3 text-center"><i><b>${type[3]} </b>€/u</i></span>
+                <span class="text-pinkwhite bg-darkwine p-2 h3 text-center"><i><b>${type[3]} </b>€</i></span>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" data-dismiss="modal">Fermer</button>
                     <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
@@ -158,45 +158,70 @@ function createCard(type) {
             </div>
         </div>
         </div>
-      </div>`
+      </div>`;
 }
 
 function addToBasket(type) {
 
   if (type[6] === 0) {
-    console.log(type[6] + "oui")
+    console.log(type[6] + "oui");
     type[6]++;
     idCartList.innerHTML +=
-      `<tr>
-      <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 2em;" alt="image ${type[0]}"></th>
+  ` <tr id="table${type[4]}">
+      <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 4em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
-      <td>${type[3]}€</td>
-      <button type="button" id="numberUp">+</button><td id="number${type[5]}">${type[6]}</td><button type="button" id="numberDown" min= "0">-</button>
-    </tr>`
+      <td class="h5"><b>${type[3]}€</b></td>
+      <td class="h5" id="number${type[4]}">${type[6]}</td>
+      <td><button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button><button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button></td>
+      <td class="h5" id="result${type[4]}"><b>${type[3]} €</b></td>
+    </tr>`;
 
   } else {
     type[6]++;
-    let idnumber = document.getElementById(`number${type[5]}`)
-    idnumber.innerText = type[6]
-    console.log(type[6] + "non")
-  }
-  let idnumber = document.getElementById(`number${type[5]}`)
-
-
-  let valueUp = document.getElementById("numberUp");
-  let valueDown = document.getElementById("numberDown");
-
-  valueUp.addEventListener("click", function() {
-    type[6]++;
-    console.log("salut");
+    let idnumber = document.getElementById(`number${type[4]}`);
     idnumber.innerText = type[6];
+    console.log(type[6] + "non");
+  }
+  let idnumber = document.getElementById(`number${type[4]}`);
 
-  })
+  // let valueUp = document.getElementById(`Up${type[4]}`);
+  // let valueDown = document.getElementById(`Down${type[4]}`);
 
-  valueDown.addEventListener("click", function() {
-    type[6]--;
-    console.log(type[6] + "au revoir");
-    idnumber.innerText = type[6]; 
-  })
+  // document.getElementById(`Up${type[4]}`).addEventListener("click", function() {
+  //   type[6]++;
+  //   console.log("salut");
+  //   idnumber.innerText = type[6];
 
+  // })
+
+  // document.getElementById(`Down${type[4]}`).addEventListener("click", function() {
+  //   type[6]--;
+  //   console.log(type[6] + "au revoir");
+  //   idnumber.innerText = type[6]; 
+  // })
+
+}
+let totalPriceArray = [];
+let idBuyTotal = document.getElementById("buytotal");
+
+
+function functionBtnUp(type){
+  let idResult = document.getElementById(`result${type[4]}`);
+  let idnumber = document.getElementById(`number${type[4]}`);
+  type[6]++;
+  idnumber.innerText = type[6];
+  idResult.innerText = type[3]*type[6] +" €";
+ 
+}
+function functionBtnDown(type){
+  let idResult = document.getElementById(`result${type[4]}`);
+  let idnumber = document.getElementById(`number${type[4]}`);
+  let idTable = document.getElementById(`table${type[4]}`);
+
+  type[6]--;
+  idnumber.innerText = type[6]; 
+  idResult.innerText = type[3]*type[6] +" €";
+ if (type[6]<1){
+  idTable.innerHTML = "";
+ }
 }

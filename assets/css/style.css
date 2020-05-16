@@ -19,7 +19,7 @@
     background-image: url(../img/vigne.png);
     background-position: top left;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 }
 .text-darkwine{
     color: #3A2C32;
@@ -67,6 +67,16 @@
 #btnUpPage:hover {
     background-color: rgb(61, 24, 25);
     padding: 0px 15px 15px 15px;
+}
+
+.btnplus{
+    width: 2rem;
+    height: 2rem;
+}
+.btnmoins{
+    width: 2rem;
+    height: 2rem;
+    padding: 1px;
 }
 @media screen and (max-width:700px) {
 
