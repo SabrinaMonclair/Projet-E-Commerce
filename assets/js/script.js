@@ -39,63 +39,61 @@ let cardSalon = ["Champagne Salon - Blanc de Blancs - Le Mesnil 2007", "assets/i
 let cardTaittinger = ["Champagne Taittinger Rosé - Comtes de Champagne 2007", "assets/img/champagne/taittinger.png", "Le Comtes de Champagne Rosé puise sa noblesse dans le long vieillissement en caves dont il bénéficie. Durant toutes ces années, ce champagne Grand Cru à la composition pure et exigeante, va affiner sa matière pour parvenir à un équilibre soyeux et savoureux, jusqu’à ce qu’il devienne totalement fondu en une multitude de particules de petit fruits rouges légèrement grillés, un équilibre entre fraîcheur et structure.", "170", "CR001", "cardTaittinger", 0]
 let cardKrugR = ["Champagne Krug Rosé - Grande Cuvéé 23 Edition", "assets/img/champagne/krugR.png", "Alliant distinction et audace, Krug rosé est inspiré par le rêve de la cinquième génération de la Maison de Krug. L’édition 23 est un assemblage de 60 vins issus de 10 millésimes différents, le plus jeune datant de 2011 et le plus ancien du millésime 2000. Vieillit 7 années en cave, ce champagne dévoile une largeur et une profondeur étonnantes. Déjà très avenante, cette cuvée révélera toute sa fraîcheur et son élégance après un repos en cave de 5 ans.", "259", "CR002", "cardKrugR", 0]
 
+//wine
+let cardRiesling = ["Riesling Clos du Saint Hune - Domaine Trimbach - 2002", "assets/img/vins/riesling.png", " Le Clos Saint Hune est considéré comme un des plus grands blanc du monde. Le Riesling Clos Ste Hune 2014 présente un nez minéral très net et profond avec des notes fumées, qui reflète de manière impressionnante le terroir du Muschelkalk. Ce riesling expressif et riche, précis et pur, avec une belle texture et d'une grande élégance. Il est minéral mais très juteux. La finale est extrêmement longue et complexe.", "190", "B001", "cardRiesling", 0]
+let cardSilex = ["Silex Pouilly Fumé - Domaine Didier Dagueneau - 2005", "assets/img/vins/silex.png", "Très pur, débordant d'énergie saline et de fraîcheur, il s'inscrit dans un univers aromatique à part ; zan, fleurs blanches, notes racinaires de tarragone.Son profil fuselé et tonique encadre une vraie mâche et une densité vigoureuse jusqu'en finale.Minéralité, puissance, race et complexité aromatique témoignent d'un terroir d'exception.", "210", "B002", "cardSilex", 0]
+let cardErmitage = ["Ermitage de L'Orée - Domaine Michel Chapoutier - 2009", "assets/img/vins/ermitage.png", "Issu de vignes de Marsanne âgée de 60 à 70 ans, De L’Orée propose une robe jaune or intense, aux reflets dorés et verts. Son nez, extrêmement aromatique et intense oscille entre arômes de cailloux chauds, de caramel, de fruits très mûrs, de citron, d’acacia et d’aubépine. La bouche, grasse, ample et très complexe est chargée de notes de fruits mûrs, d’épices et de grillé avant de terminer sur une belle longueur et une finale fraîche.", "290", "B003", "cardErmitage", 0]
+let cardMontrachet = ["Montrachet Grand Cru - Domaine Baron Thenard - 2012", "assets/img/vins/montrachet.png", "La grandeur et la richesse de ce Montrachet sont impressionnantes des saveurs si délicieuses qui offrent une longueur remarquable. Le plus réputé de toute la Bourgogne. C'est un vin à la puissance aromatique hors norme. Très beau boisé, présent mais suffisament bien intégré pour ne pas masquer les arômes subtiles de fleurs blanches, de pommes et d'épices douces.", "420", "B004", "cardMontrachet", 0]
 
 
-
-    //wine
-    let cardMeursault = ["Meursault 1er cru Les Charmes", "assets/img/vins/meursault.2017.png", "Ce Premier Cru à la robe or jaune brillante développe gras et richesse tout en laissant une bouche qui s’impose d'une structure volumineuse. Une touche de minéralité attrayante ajoute de la nuance aux arômes de noix, de poire et de zeste d'agrumes torréfiés, on retrouve un bel équilibre puis la finesse reprend ses droits pour guider la fin de bouche qui s’appuie sur une belle tension.", "53,90", "B002", "cardMeursault", 0]
-    let cardSerrant = ["Couléé de Serrant", "assets/img/vins/coulee-de-serrant.2015png.png", "La Coulée de Serrant, à Savennières, est réputé pour produire des vins blancs exceptionnels. En biodynamie depuis 1981, élevé en fûts de chêne pendant 6 à 8 mois, produit en très petite quantité, la Coulée de Serrant est issue de vignes de plus de 35/40 ans, certaines ayant plus de 80 ans. Vin aromatique, de sa longueur, et de sa superbe minéralité.", "73,90", "B003", "cardSerrant", 0]
-
-
-    //spirit
-
-    let cardTalisker = ["Talisker 10 ans", "assets/img/spiritueux/talisker.png", "Unique single malt de l’île de Skye, Talisker 10 ans possède un caractère marin et épicé hors du commun", "44,90", "S001", "cardTalisker", 0]
+//spirit
 
 
 
 
 
-    //appel fonction
-    idChampagne.onclick = showCardChampagne;
-    idWine.onclick = showCardWine;
-    idSpirit.onclick = showCardSpirit;
 
-    function showCardChampagne() {
-      idMainArea.innerText = "";
-      createCard(cardSiecle);
-      createCard(cardKrug);
-      createCard(cardCristal);
-      createCard(cardWinston);
-      createCard(cardBollinger);
-      createCard(cardSalon);
-      createCard(cardTaittinger);
-      createCard(cardKrugR);
-    }
+//appel fonction
+idChampagne.onclick = showCardChampagne;
+idWine.onclick = showCardWine;
+idSpirit.onclick = showCardSpirit;
 
-    function showCardWine() {
-      idMainArea.innerText = "";
+function showCardChampagne() {
+  idMainArea.innerText = "";
+  createCard(cardSiecle);
+  createCard(cardKrug);
+  createCard(cardCristal);
+  createCard(cardWinston);
+  createCard(cardBollinger);
+  createCard(cardSalon);
+  createCard(cardTaittinger);
+  createCard(cardKrugR);
+}
 
-      createCard(cardMeursault);
-      createCard(cardSerrant);
+function showCardWine() {
+  idMainArea.innerText = "";
 
-
-
-
-    }
+  createCard(cardRiesling);
+  createCard(cardSilex);
+  createCard(cardErmitage);
+  createCard(cardMontrachet);
 
 
-    function showCardSpirit() {
-      idMainArea.innerText = "";
-      createCard(cardTalisker);
+}
 
 
-    }
+function showCardSpirit() {
+  idMainArea.innerText = "";
+  createCard(cardTalisker);
 
 
-    function createCard(type) {
-      idMainArea.innerHTML +=
-        `   <div class="col-6 col-sm-5 col-md-4 col-lg-3 py-2">
-        <div class="card">
+}
+
+
+function createCard(type) {
+  idMainArea.innerHTML +=
+    `   <div class="col-6 col-sm-5 col-md-4 col-lg-3 py-2">
+        <div class="card shadow">
         <img src="${type[1]}" class="card-img-top" alt="image ${type[0]}">
         <div class="card-body text-darkwine">
             <h5 class="card-title">${type[0]}</h5>
@@ -130,25 +128,25 @@ let cardKrugR = ["Champagne Krug Rosé - Grande Cuvéé 23 Edition", "assets/img
         </div>
         </div>
       </div>`
-    }
+}
 
-    function addToBasket(type) {
+function addToBasket(type) {
 
-      if (type[6] === 0) {
-        console.log(type[6] + "oui")
-        type[6]++;
-        idCartList.innerHTML +=
-          `<tr>
+  if (type[6] === 0) {
+    console.log(type[6] + "oui")
+    type[6]++;
+    idCartList.innerHTML +=
+      `<tr>
       <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 2em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
       <td>${type[3]}€</td>
       <td id="number${type[5]}">${type[6]}</td>
     </tr>`;
 
-      } else {
-        type[6]++;
-        let idnumber = document.getElementById(`number${type[5]}`)
-        idnumber.innerText = type[6]
-        console.log(type[6] + "non")
-      }
-    }
+  } else {
+    type[6]++;
+    let idnumber = document.getElementById(`number${type[5]}`)
+    idnumber.innerText = type[6]
+    console.log(type[6] + "non")
+  }
+}
