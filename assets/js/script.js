@@ -98,7 +98,7 @@ function createCard(type) {
         <div class="card-body text-darkwine">
             <h5 class="card-title">${type[0]}</h5>
             <p class="card-text"></p>
-            <a href="#" class="btn btn-dark text-pinkwhite bg-pinkdark" data-toggle="modal" data-target="#${type[4]}">Ajouter au Panier</a>
+            <a href="#" class="btn btn-dark text-pinkwhite bg-pinkdark" data-toggle="modal" data-target="#${type[4]}">Accéder au Produit</a>
             <span class="badge text-pinkwhite bg-darkwine">${type[3]}€</span>
         </div>
         </div>
@@ -113,13 +113,19 @@ function createCard(type) {
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <div class="row justify-content-center text-center">
+                <div class="col-6"><img src="${type[1]}" class="card-img-top" alt="image ${type[0]}"></div>
+                </div>
                 <div class="modal-body">
                   <p>${type[2]} </p>
-                  <p>Voulez vous ajouter cet article dans votre panier ?<br>
-                  <i>ref: ${type[4]}</i>
+                  <p><i>ref: ${type[4]}</i><br>
+                  <b>Voulez vous ajouter cet article dans votre panier ?</b>
                   </p>
                 </div>
-                <div class="modal-footer">
+                
+                <span class="text-pinkwhite bg-darkwine p-2 h3 text-center"><i><b>${type[3]} </b>€/u</i></span>
+                <div class="modal-footer justify-content-center">
+                
                 
                     <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" data-dismiss="modal">Fermer</button>
                     <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
