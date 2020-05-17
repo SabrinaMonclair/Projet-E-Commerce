@@ -72,7 +72,7 @@ idSpirit.onclick = showCardSpirit;
 // creation de la page champages avec toute les cards
 function showCardChampagne() {
   idMainArea.innerText = "";
-  
+
   createCard(cardSiecle);
   createCard(cardKrug);
   createCard(cardCristal);
@@ -131,11 +131,11 @@ function showCardSpirit() {
 // creation de la card et de sa modale
 function createCard(type) {
   idMainArea.innerHTML +=
-    `   <div class="col-6 col-sm-5 col-md-4 col-lg-3 py-2">
+    `   <div class="col-6 col-md-4 col-lg-3 py-2 px-1 px-md-2 ">
         <div class="card shadow">
         <img src="${type[1]}" class="card-img-top" alt="image ${type[0]}">
         <div class="card-body text-darkwine">
-            <h5 class="card-title">${type[0]}</h5>
+            <h5 class="card-title title-card-size">${type[0]}</h5>
             <p class="card-text"></p>
             <a href="#" class="btn btn-dark text-pinkwhite bg-pinkdark" data-toggle="modal" data-target="#${type[4]}">Accéder au Produit</a>
             <span class="badge text-pinkwhite bg-darkwine">${type[3]}€</span>
@@ -184,14 +184,20 @@ function addToBasket(type) {
       <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 4em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
       <td class="h5"><b>${type[3]}</b>€</td>
-      <td class="h5" id="number${type[4]}">${type[6]}</td>
-      <td><button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button><button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button></td>
+      <td class="h5" id="number${type[4]}">
+        ${type[6]}<br>
+        <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
+        <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+      </td>
       <td class="h5" id="result${type[4]}"><b>${type[3]}</b> €</td>
     </tr>`;
   } else {
     //si on click a nouveau sur la mm boutail dans le shop, ca ajoute une bouteille de plus au panier
     type[6]++;
-    idnumber.innerText = type[6];
+    idnumber.innerHTML = 
+      `${type[6]}<br>
+      <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
+      <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>`;
   }
   //ajout du prix sur le total global
   totalPrice = Number(totalPrice) + Number(type[3]);
@@ -204,7 +210,11 @@ function functionBtnUp(type) {
   let idnumber = document.getElementById(`number${type[4]}`);
 
   type[6]++;
-  idnumber.innerText = type[6];
+  idnumber.innerHTML = 
+    `${type[6]}<br>
+    <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
+    <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+  `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
 
   //total -> bouton payement
@@ -219,7 +229,11 @@ function functionBtnDown(type) {
   let idTable = document.getElementById(`table${type[4]}`);
 
   type[6]--;
-  idnumber.innerText = type[6];
+  idnumber.innerHTML = 
+    `${type[6]}<br>
+    <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
+    <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+  `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
   // si le nombre de bouteil = 0 alors ca supprime la ligne du tableau
   if (type[6] < 1) {
