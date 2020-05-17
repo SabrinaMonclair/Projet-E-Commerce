@@ -175,18 +175,20 @@ function createCard(type) {
 // ajout d'une ligne de tableau dans la modal panier en fonction de la card 
 function addToBasket(type) {
   let idnumber = document.getElementById(`number${type[4]}`);
+  //quand on click la 1ere fois sur ajouté au panier d'une des bouteil, ca augmente la quantité de cette bouteille et ca ajoute le tableau
   if (type[6] === 0) {
     type[6]++;
     idCartList.innerHTML +=
       ` <tr id="table${type[4]}">
       <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 4em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
-      <td class="h5"><b>${type[3]}€</b></td>
+      <td class="h5"><b>${type[3]}</b>€</td>
       <td class="h5" id="number${type[4]}">${type[6]}</td>
       <td><button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button><button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button></td>
-      <td class="h5" id="result${type[4]}"><b>${type[3]} €</b></td>
+      <td class="h5" id="result${type[4]}"><b>${type[3]}</b> €</td>
     </tr>`;
   } else {
+    //si on click a nouveau sur la mm boutail dans le shop, ca ajoute une bouteille de plus au panier
     type[6]++;
     idnumber.innerText = type[6];
   }
@@ -195,16 +197,20 @@ function addToBasket(type) {
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
 
+//fonction bouton + avais ajout du total sur le bouton payement
 function functionBtnUp(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
 
   type[6]++;
   idnumber.innerText = type[6];
-  idResult.innerText = type[3] * type[6] + " €";
-
+  idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
+  //total -> bouton payement
+  totalPrice = Number(totalPrice) + Number(type[3]);
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
 
+//fonction bouton - avais ajout du total sur le bouton payement
 function functionBtnDown(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
@@ -212,12 +218,19 @@ function functionBtnDown(type) {
 
   type[6]--;
   idnumber.innerText = type[6];
-  idResult.innerText = type[3] * type[6] + " €";
+  idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
+  // si le nombre de bouteil = 0 alors ca supprime la ligne du tableau
   if (type[6] < 1) {
     idTable.innerHTML = "";
   }
+<<<<<<< HEAD
     //total -> bouton payement
     totalPrice = Number(totalPrice) - Number(type[3]);
     idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
   }
+=======
+  //total -> bouton payement
+  totalPrice = Number(totalPrice) - Number(type[3]);
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
+>>>>>>> 77905ffdb123182eb46681d36f6274d2fb517a33
 }
