@@ -216,4 +216,8 @@ function functionBtnDown(type) {
   if (type[6] < 1) {
     idTable.innerHTML = "";
   }
+    //total -> bouton payement
+    totalPrice = Number(totalPrice) - Number(type[3]);
+    idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
+  }
 }
