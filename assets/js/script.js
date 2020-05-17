@@ -27,6 +27,8 @@ let idWine = document.getElementById("wine");
 let idSpirit = document.getElementById("spirit");
 let idMainArea = document.getElementById("mainArea");
 let idCartList = document.getElementById("cartlist");
+let totalPrice = 0;
+let idBuyTotal = document.getElementById("buytotal");
 
 // EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001","cardNom", 0]
 //champagne
@@ -67,6 +69,7 @@ idChampagne.onclick = showCardChampagne;
 idWine.onclick = showCardWine;
 idSpirit.onclick = showCardSpirit;
 
+// creation de la page champages avec toute les cards
 function showCardChampagne() {
   idMainArea.innerText = "";
   createCard(cardSiecle);
@@ -84,6 +87,7 @@ function showCardChampagne() {
   });
 }
 
+// creation de la page vins avec toute les cards
 function showCardWine() {
   idMainArea.innerText = "";
 
@@ -106,7 +110,7 @@ function showCardWine() {
   });
 }
 
-
+// creation de la page Spiriteux avec toute les cards
 function showCardSpirit() {
   idMainArea.innerText = "";
   
@@ -123,7 +127,7 @@ function showCardSpirit() {
   });
 }
 
-
+// creation de la card et de sa modale
 function createCard(type) {
   idMainArea.innerHTML +=
     `   <div class="col-6 col-sm-5 col-md-4 col-lg-3 py-2">
@@ -159,8 +163,8 @@ function createCard(type) {
                 
                 <span class="text-pinkwhite bg-darkwine p-2 h3 text-center"><i><b>${type[3]} </b>€</i></span>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
+                    <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
                 </div>
             </div>
         </div>
@@ -168,10 +172,10 @@ function createCard(type) {
       </div>`;
 }
 
+// ajout d'une ligne de tableau dans la modal panier en fonction de la card 
 function addToBasket(type) {
-
+  let idnumber = document.getElementById(`number${type[4]}`);
   if (type[6] === 0) {
-    console.log(type[6] + "oui");
     type[6]++;
     idCartList.innerHTML +=
       ` <tr id="table${type[4]}">
@@ -182,39 +186,19 @@ function addToBasket(type) {
       <td><button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button><button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button></td>
       <td class="h5" id="result${type[4]}"><b>${type[3]} €</b></td>
     </tr>`;
-
   } else {
     type[6]++;
-    let idnumber = document.getElementById(`number${type[4]}`);
     idnumber.innerText = type[6];
-    console.log(type[6] + "non");
   }
-  let idnumber = document.getElementById(`number${type[4]}`);
-
-  // let valueUp = document.getElementById(`Up${type[4]}`);
-  // let valueDown = document.getElementById(`Down${type[4]}`);
-
-  // document.getElementById(`Up${type[4]}`).addEventListener("click", function() {
-  //   type[6]++;
-  //   console.log("salut");
-  //   idnumber.innerText = type[6];
-
-  // })
-
-  // document.getElementById(`Down${type[4]}`).addEventListener("click", function() {
-  //   type[6]--;
-  //   console.log(type[6] + "au revoir");
-  //   idnumber.innerText = type[6]; 
-  // })
-
+  //ajout du prix sur le total global
+  totalPrice = Number(totalPrice) + Number(type[3]);
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
-let totalPriceArray = [];
-let idBuyTotal = document.getElementById("buytotal");
-
 
 function functionBtnUp(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
+
   type[6]++;
   idnumber.innerText = type[6];
   idResult.innerText = type[3] * type[6] + " €";
