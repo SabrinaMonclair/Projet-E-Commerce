@@ -55,11 +55,12 @@ let cardYquem = ["Chateau Yquem 2001 - Sauternes 1er Cru Classé Supérieur", "a
 
 
 //spirit
-
-
-
-
-
+let cardMacallan = ["Macallan Rare Cask Black - Whisky, Ecosse", "assets/img/spiritueux/macallan.png", "Rare Cask Black est un mariage d'une centaine de fûts à prédominance sherry. Fabriqué à partir de whisky tourbé, très rarement produit à la distillerie il présente des notes de fruits secs, de muscade, de gingembre et de fumée.", "650", "S001", "cardMacallan", 0]
+let cardLagavulin = ["Lagavulin Distillers Edition 1980 - Whisky, Ecosse", "assets/img/spiritueux/lagavulin.png", "Une version vintage de 1980 de l'édition de distillateurs mûris PX Sherry de Lagavulin Ce millésime particulier a été publié il y a quelques années.", "1150", "S002", "cardLagavulin", 0]
+let cardNikka = ["Nikka Yoichi 10y - Whisky, Japon", "assets/img/spiritueux/nikka.png", "Un single malt de dix ans, élégamment tourbé, de la belle distillerie Yoichi de Nikka à Hokkaido, où le whisky est fabriqué tel qu'il était en Écosse avec de petits alambics à cuisson directe et mûri dans le bois le plus fin que la société puisse trouver. Mis en bouteille à 45% pour plus de punch.", "420", "S003", "cardNikka", 0]
+let cardHibiki = ["Suntory Hibiki 17y - Whisky, Japon", "assets/img/spiritueux/hibiki.png", "Un fantastique mélange japonais, fait de malt vieilli et de whiskies de grain des trois distilleries de Suntory. Épicé et sophistiqué, il est idéal pour surprendre les gens lors de dégustations à l'aveugle.", "550", "S004", "cardHibiki", 0]
+let cardParadis = ["Hennessy Paradis Imperial - Cognac, France", "assets/img/spiritueux/paradis.png", "Hennessy Paradis Imperial est une création contemporaine de Yann Gillioux, septième génération de Maitres Assembleurs. Ce cognac fait de précision symbolise l'apogée de l'art de la sélection des eaux de vie, l'incessante quête de finesse et offre un assemblage au caractère unique et aux contrastes inattendus. A l'issue d'une récolte, le nombre moyen d'eaux de vie ayant le potentiel de rejoindre un jour cet assemblage est très faible : seulement 10 sur 10000. Une alliance inédite de l'âge et de la finesse, un cognac Hennessy complexe aux arômes floraux délicats additionnés à de légères notes épicées et fumées. Découvrez le luxe signé Hennessy.", "2540", "S007", "cardParadis", 0]
+let cardLouis = ["Louis XIII - Rémy Martin - Cognac, France", "assets/img/spiritueux/louis.png", "Depuis sa création en 1874, le cognac Louis XIII a été suivi par quatre générations de Maître de chai qui ont consacré leur vie à la sélection, à l'assemblage et au vieillissement des eaux-de-vie les plus extraordinaires. Véritable ambassadeur de l'art-de-vivre à la française, Louis XIII est un assemblage exclusif de 1200 eaux-de-vie âgées entre 40 et 100 ans dans un flacon qui a tout d'une oeuvre d'art. Chacune d'entre elles est vieillie dans des fût de chêne du Limousin …Un trésor intemporel qui vous embarque pour un sublime voyage à travers un siècle d'arômes.", "3100", "S008", "cardLouis", 0]
 
 //appel fonction
 idChampagne.onclick = showCardChampagne;
@@ -76,7 +77,7 @@ function showCardChampagne() {
   createCard(cardSalon);
   createCard(cardTaittinger);
   createCard(cardKrugR);
-  
+
   window.scrollTo({
     top: 500,
     behavior: 'smooth'
@@ -108,7 +109,13 @@ function showCardWine() {
 
 function showCardSpirit() {
   idMainArea.innerText = "";
- createCard()
+  
+  createCard(cardMacallan);
+  createCard(cardLagavulin);
+  createCard(cardNikka);
+  createCard(cardHibiki);
+  createCard(cardParadis);
+  createCard(cardLouis);
 
   window.scrollTo({
     top: 500,
@@ -167,7 +174,7 @@ function addToBasket(type) {
     console.log(type[6] + "oui");
     type[6]++;
     idCartList.innerHTML +=
-  ` <tr id="table${type[4]}">
+      ` <tr id="table${type[4]}">
       <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 4em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
       <td class="h5"><b>${type[3]}€</b></td>
@@ -205,23 +212,24 @@ let totalPriceArray = [];
 let idBuyTotal = document.getElementById("buytotal");
 
 
-function functionBtnUp(type){
+function functionBtnUp(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
   type[6]++;
   idnumber.innerText = type[6];
-  idResult.innerText = type[3]*type[6] +" €";
- 
+  idResult.innerText = type[3] * type[6] + " €";
+
 }
-function functionBtnDown(type){
+
+function functionBtnDown(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
   let idTable = document.getElementById(`table${type[4]}`);
 
   type[6]--;
-  idnumber.innerText = type[6]; 
-  idResult.innerText = type[3]*type[6] +" €";
- if (type[6]<1){
-  idTable.innerHTML = "";
- }
+  idnumber.innerText = type[6];
+  idResult.innerText = type[3] * type[6] + " €";
+  if (type[6] < 1) {
+    idTable.innerHTML = "";
+  }
 }
