@@ -255,7 +255,7 @@ function functionBtnDown(type) {
   //total -> bouton payement
   totalPrice = Number(totalPrice) - Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  //si le prix total est supperieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  //si le prix total est superieur a 0 alors l'icone du panier change sinon elle redeviens vide
   if (totalPrice > 0) {
     idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
   } else {
