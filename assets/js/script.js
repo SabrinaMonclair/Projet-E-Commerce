@@ -181,16 +181,16 @@ function addToBasket(type) {
   if (type[6] === 0) {
     type[6]++;
     idCartList.innerHTML +=
-      ` <tr id="table${type[4]}">
+      ` <tr class="table-modif" id="table${type[4]}">
       <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 4em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
-      <td class="h5"><b>${type[3]}</b>€</td>
-      <td class="h5" id="number${type[4]}">
+      <td class=""><b>${type[3]}</b>€</td>
+      <td class="" id="number${type[4]}">
         ${type[6]}<br>
         <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
         <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
       </td>
-      <td class="h5" id="result${type[4]}"><b>${type[3]}</b> €</td>
+      <td class="" id="result${type[4]}"><b>${type[3]}</b> €</td>
     </tr>`;
   } else {
     //si on click a nouveau sur la mm boutail dans le shop, ca ajoute une bouteille de plus au panier
