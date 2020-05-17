@@ -72,6 +72,7 @@ idSpirit.onclick = showCardSpirit;
 // creation de la page champages avec toute les cards
 function showCardChampagne() {
   idMainArea.innerText = "";
+  
   createCard(cardSiecle);
   createCard(cardKrug);
   createCard(cardCristal);
@@ -113,7 +114,7 @@ function showCardWine() {
 // creation de la page Spiriteux avec toute les cards
 function showCardSpirit() {
   idMainArea.innerText = "";
-  
+
   createCard(cardMacallan);
   createCard(cardLagavulin);
   createCard(cardNikka);
@@ -205,6 +206,7 @@ function functionBtnUp(type) {
   type[6]++;
   idnumber.innerText = type[6];
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
+
   //total -> bouton payement
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
@@ -223,14 +225,7 @@ function functionBtnDown(type) {
   if (type[6] < 1) {
     idTable.innerHTML = "";
   }
-<<<<<<< HEAD
-    //total -> bouton payement
-    totalPrice = Number(totalPrice) - Number(type[3]);
-    idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  }
-=======
   //total -> bouton payement
   totalPrice = Number(totalPrice) - Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
->>>>>>> 77905ffdb123182eb46681d36f6274d2fb517a33
 }
