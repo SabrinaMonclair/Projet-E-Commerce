@@ -190,7 +190,7 @@ function addToBasket(type) {
         <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
         <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
       </td>
-      <td class="" id="result${type[4]}"><b>${type[3]}</b> €</td>
+      <td class="" id="result${type[4]}"><b>${type[3]}</b>€</td>
     </tr>`;
   } else {
     //si on click a nouveau sur la mm boutail dans le shop, ca ajoute une bouteille de plus au panier
@@ -222,7 +222,7 @@ function functionBtnUp(type) {
     <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
     <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
   `;
-  idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
+  idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
 
   //total -> bouton payement
   totalPrice = Number(totalPrice) + Number(type[3]);
@@ -247,7 +247,7 @@ function functionBtnDown(type) {
     <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
     <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
   `;
-  idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
+  idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
   // si le nombre de bouteil = 0 alors ca supprime la ligne du tableau
   if (type[6] < 1) {
     idTable.innerHTML = "";
