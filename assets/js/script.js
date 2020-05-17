@@ -29,6 +29,7 @@ let idMainArea = document.getElementById("mainArea");
 let idCartList = document.getElementById("cartlist");
 let totalPrice = 0;
 let idBuyTotal = document.getElementById("buytotal");
+let idIconCart = document.getElementById("icon-cart");
 
 // EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001","cardNom", 0]
 //champagne
@@ -194,7 +195,7 @@ function addToBasket(type) {
   } else {
     //si on click a nouveau sur la mm boutail dans le shop, ca ajoute une bouteille de plus au panier
     type[6]++;
-    idnumber.innerHTML = 
+    idnumber.innerHTML =
       `${type[6]}<br>
       <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
       <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>`;
@@ -202,6 +203,12 @@ function addToBasket(type) {
   //ajout du prix sur le total global
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
+  //si le prix total est supperieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  if (totalPrice > 0) {
+    idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
+  } else {
+    idIconCart.innerHTML = `<img src="assets/img/cartempty.png" alt="Panier Vide" style="width: 2.5em; height: 2.5em;">`
+  }
 }
 
 //fonction bouton + avais ajout du total sur le bouton payement
@@ -210,7 +217,7 @@ function functionBtnUp(type) {
   let idnumber = document.getElementById(`number${type[4]}`);
 
   type[6]++;
-  idnumber.innerHTML = 
+  idnumber.innerHTML =
     `${type[6]}<br>
     <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
     <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
@@ -220,6 +227,12 @@ function functionBtnUp(type) {
   //total -> bouton payement
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
+  //si le prix total est supperieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  if (totalPrice > 0) {
+    idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
+  } else {
+    idIconCart.innerHTML = `<img src="assets/img/cartempty.png" alt="Panier Vide" style="width: 2.5em; height: 2.5em;">`
+  }
 }
 
 //fonction bouton - avais ajout du total sur le bouton payement
@@ -229,7 +242,7 @@ function functionBtnDown(type) {
   let idTable = document.getElementById(`table${type[4]}`);
 
   type[6]--;
-  idnumber.innerHTML = 
+  idnumber.innerHTML =
     `${type[6]}<br>
     <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
     <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
@@ -242,4 +255,10 @@ function functionBtnDown(type) {
   //total -> bouton payement
   totalPrice = Number(totalPrice) - Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
+  //si le prix total est supperieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  if (totalPrice > 0) {
+    idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
+  } else {
+    idIconCart.innerHTML = `<img src="assets/img/cartempty.png" alt="Panier Vide" style="width: 2.5em; height: 2.5em;">`
+  }
 }
