@@ -22,6 +22,7 @@ function topFunction() {
 }
 
 // card pour la page
+let idHomepage = document.getElementById("homepage");
 let idChampagne = document.getElementById("champagne");
 let idWine = document.getElementById("wine");
 let idSpirit = document.getElementById("spirit");
@@ -51,9 +52,9 @@ let cardTrevallon = ["Domaine de Trevallon - Domaine Dürrbach - Alpilles 2014",
 let cardLambrays = ["Clos Des Lambrays Grand Cru - Domaine Des Lambrays - 2002", "assets/img/vins/lambrays.png", "Issu d’un terroir complexe chargé d’histoire ce fabuleux Clos des Lambrays est convoité par les amateurs passionnés ! Corsé, souple et intense, ce vin offre une harmonie d’arômes et un équilibre magistral. Quelques années de garde sublimeront ce vin et seront la promesse d'une dégustation inoubliable.", "270", "R002", "cardLambrays", 0]
 let cardRaven = ["Domaine Sine Qua Non - Raven 3 Series 2006 - Californie USA", "assets/img/vins/raven.png", "Sine Qua Non se concentre sur les cépages rhodaniens : la Syrah, la Grenache et la Roussanne notamment. La série Raven est un assemblage de 93% Syrah, 5% Grenache et 2% Viognier poiur une durée de deux ans en fut de chêne français. Offrant une couleur pourpre dense, des fruits magnifiques et un doux parfum de graphite, de mûres, de bleuets et de charbon de bois.", "540", "R003", "cardRaven", 0]
 let cardCheval = ["Château Cheval Blanc 2010 - Saint-Emilion Grand Cru Classé A", "assets/img/vins/cheval.png", "Le plus célèbre des Saint-Emilion Grand Cru, et l’un des vins français les plus réputés au monde, s’est construit une réputation sans faille depuis la seconde moitié du XXème siècle grâce à sa régularité exemplaire. Le Château signe un millésime 2010 légendaire et inoubliable au potentiel de garde considérable.Avec une parfaite combinaison entre fraîcheur, concentration et finesse, ce vin est tout simplement extraordinaire", "760", "R004", "cardCheval", 0]
-let cardPibarnon = ["Chateau de Pibarnon - Bandol - Provence Rosé 2009", "assets/img/vins/pibarnon.png", "Tout d'abord, un terroir exceptionnel. Ensuite, une texture et une matière de grande finesse. Un vin charnu, fruité, entier et gourmand à la fois. Produit en petite quantité, ce rosé possède une superbe typicité, une référence mondiale.", "90", "RO001", "cardPibarnon", 0]
+let cardPibarnon = ["Chateau de Pibarnon - Bandol Rosé - Provence Rosé 2009", "assets/img/vins/pibarnon.png", "Tout d'abord, un terroir exceptionnel. Ensuite, une texture et une matière de grande finesse. Un vin charnu, fruité, entier et gourmand à la fois. Produit en petite quantité, ce rosé possède une superbe typicité, une référence mondiale.", "90", "RO001", "cardPibarnon", 0]
 let cardSine = ["Domaine Sine Qua Non - Autrement Dit 2006 - Rosé Californie USA", "assets/img/vins/sine.png", "Sine Qua Non se concentre sur les cépages rhodaniens", "270", "RO002", "cardSine", 0]
-let cardBabylone = ["Jardins De Babylone - Didier Dagueneau -  Jurançon 2014", "assets/img/vins/babylone.png", "A Jurançon, le vignoble couvre 3 hectares en terrasses, exclusivement plantés de Petit Manseng.Une robe jaune foncée, reflet or pâle. Elle emprunte ses notes exotiques aux vins alsaciens, avec des embruns de caramel et de coing pour beaucoup de gourmandise. Ce vin de petit manseng possède un esprit singulier, riche de son onctuosité et délectable jusqu’à la dernière goutte par sa fraicheur", "112", "M001", "cardBabylone", 0]
+let cardBabylone = ["Les Jardins De Babylone - Didier Dagueneau -  Jurançon 2014", "assets/img/vins/babylone.png", "A Jurançon, le vignoble couvre 3 hectares en terrasses, exclusivement plantés de Petit Manseng.Une robe jaune foncée, reflet or pâle. Elle emprunte ses notes exotiques aux vins alsaciens, avec des embruns de caramel et de coing pour beaucoup de gourmandise. Ce vin de petit manseng possède un esprit singulier, riche de son onctuosité et délectable jusqu’à la dernière goutte par sa fraicheur", "112", "M001", "cardBabylone", 0]
 let cardYquem = ["Chateau Yquem 2001 - Sauternes 1er Cru Classé Supérieur", "assets/img/vins/yquem.png", "Majestueux dans sa tunique vieil or, il joue subtilement de ses parfums de fruit de la Passion, d'abricot, d'agrumes et de figue qu'il met en rivalité avec des fleurs et une pointe de muscade. A l'aération, ceux-ci deviennent de plus en plus présents et dominent le bouquet, complétés de pointes de vanille et de coing. Dense et ample, l'attaque s'ouvre sur un palais rond, enveloppant, riche, mais équilibré. Longue, la finale revéle des fruits frais et des notes d'abricot confit.", "630", "M002", "cardYquem", 0]
 
 
@@ -69,6 +70,13 @@ let cardLouis = ["Louis XIII - Rémy Martin - Cognac, France", "assets/img/spiri
 idChampagne.onclick = showCardChampagne;
 idWine.onclick = showCardWine;
 idSpirit.onclick = showCardSpirit;
+idHomepage.onclick = showHomepage;
+
+
+// creation de la page d'accueil avec toute les cards
+function showHomepage(){
+  idMainArea.innerText = `HOME PAGE a copier coller`;
+}
 
 // creation de la page champages avec toute les cards
 function showCardChampagne() {
@@ -84,7 +92,7 @@ function showCardChampagne() {
   createCard(cardKrugR);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
@@ -107,7 +115,7 @@ function showCardWine() {
   createCard(cardYquem);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
@@ -124,7 +132,7 @@ function showCardSpirit() {
   createCard(cardLouis);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
@@ -176,6 +184,7 @@ function createCard(type) {
 
 // ajout d'une ligne de tableau dans la modal panier en fonction de la card 
 function addToBasket(type) {
+  let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
   //quand on click la 1ere fois sur ajouté au panier d'une des bouteil, ca augmente la quantité de cette bouteille et ca ajoute le tableau
   if (type[6] === 0) {
@@ -187,8 +196,8 @@ function addToBasket(type) {
       <td class=""><b>${type[3]}</b>€</td>
       <td class="" id="number${type[4]}">
         ${type[6]}<br>
-        <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
-        <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+        <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
+        <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>
       </td>
       <td class="" id="result${type[4]}"><b>${type[3]}</b>€</td>
     </tr>`;
@@ -197,9 +206,11 @@ function addToBasket(type) {
     type[6]++;
     idnumber.innerHTML =
       `${type[6]}<br>
-      <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
-      <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>`;
+      <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
+      <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>`;
+    idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
   }
+  
   //ajout du prix sur le total global
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
@@ -219,8 +230,8 @@ function functionBtnUp(type) {
   type[6]++;
   idnumber.innerHTML =
     `${type[6]}<br>
-    <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
-    <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+    <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
+    <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>
   `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
 
@@ -244,8 +255,8 @@ function functionBtnDown(type) {
   type[6]--;
   idnumber.innerHTML =
     `${type[6]}<br>
-    <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
-    <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+    <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
+    <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>
   `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
   // si le nombre de bouteil = 0 alors ca supprime la ligne du tableau
