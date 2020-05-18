@@ -1,7 +1,7 @@
 // bouton up page
-window.onload = function minorBlock(){
-  console.log("saucisse");
- }
+window.onload = function minorBlock() {
+ document.getElementById("warning").focus();
+}
 
 let idBtnUpPage = document.getElementById("btnUpPage");
 
@@ -78,9 +78,9 @@ idHomepage.onclick = showHomepage;
 
 
 // creation de la page d'accueil avec toutes les cards
-function showHomepage(){
-  idMainArea.innerHTML = 
-  `<a class="h1 font-parisienne">Notre Maison</a>
+function showHomepage() {
+  idMainArea.innerHTML =
+    `<a class="h1 font-parisienne">Notre Maison</a>
     <p>Œnothèque est une boutique spécialisée en vins de collections pour le plaisir des amateurs et des collectionneurs.
       Notre sommelier a sélectionné les plus grands vins de notre territoire pour votre plus grand plaisir. Des bulles de la Champagne de nos plus grands terroirs aux parcelles de Bourgogne et de la vallée du Rhône en passant par les vins minéraux de la Loire et les vins tanniques du vignoble Bordelais et ainsi que ceux du Languedoc. La plupart de nos vins ont à excellent potentiel de garde et pourront rester dans votre cave afin de profiter pleinement des arômes.
       Nos livraisons sont préparées avec soin et nous vous garantissons un emballage anti-casse.</p>
@@ -97,10 +97,10 @@ function showHomepage(){
     <a class="h2 col-12 font-parisienne" onclick="showCardSpirit()">Spiritueux</a>
     <p>Notre gamme de spiritueux est issue de bouteilles rares sélectionnées qui raviront les grands connaisseurs. Nos whiskys des Highlands d'Écosse au Japon mais également nos cognacs français mis à l'honneur avec l'ambassadeur Louis XIII.</p>
 `;
-window.scrollTo({
-  top: 0,
-  behavior: 'smooth'
-});
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
 // creation de la page champagnes avec toutes les cards
@@ -234,7 +234,7 @@ function addToBasket(type) {
       <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>`;
     idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
   }
-  
+
   //Ajout du prix sur le total.
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
