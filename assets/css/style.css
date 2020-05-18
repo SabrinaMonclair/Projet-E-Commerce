@@ -1,14 +1,15 @@
 /* majeur ? */
-#warning{
- background-color: rgba(0, 0, 0, 0.85);
- padding-top: 20rem;
+#warning {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding-top: 20rem;
 }
-#modalwarning{
+
+#modalwarning {
     align-items: center;
     vertical-align: middle;
 }
 
-#img-accueil{
+#img-accueil {
     width: 100%;
     height: 40vh;
     background-image: url(../img/homepage2.jpg);
@@ -17,56 +18,72 @@
     background-repeat: no-repeat;
     background-size: auto;
 }
-.font-parisienne{
+
+.font-parisienne {
     font-family: 'Parisienne', cursive;
 }
-#titreHeader{
+
+#titreHeader {
     font-size: 8rem;
     padding-top: 6rem;
     padding-right: 5rem;
-    text-shadow:  0 0 5px rgb(97, 97, 97), 0 0 10px rgb(97, 97, 97), 0 0 15px rgb(97, 97, 97);
+    text-shadow: 0 0 5px rgb(97, 97, 97), 0 0 10px rgb(97, 97, 97), 0 0 15px rgb(97, 97, 97);
 }
-.img-fond{
+
+.img-fond {
     background-image: url(../img/vigne.png);
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-.leftbutton{
+.leftbutton {
     margin-right: 2rem;
 }
-.text-darkwine{
+
+.text-darkwine {
     color: #3A2C32;
 }
-.text-pinklight{
+
+.text-pinklight {
     color: #EE8E96;
 }
-.text-pinkwhite{
+
+.text-pinkwhite {
     color: #FFEBEE;
 }
-.bg-darkwine{
+
+.bg-darkwine {
     background-color: #3A2C32;
 }
-.bg-pinkdark{
-    background-color: #551E1F; 
+
+.bg-pinkdark {
+    background-color: #551E1F;
 }
-.bg-pinkmiddle{
+
+.bg-pinkmiddle {
     background-color: #CE4E56;
 }
-.bg-pinklight{
+
+.bg-pinklight {
     background-color: #EE8E96;
 }
-.bg-pinkwhite{
+
+.bg-pinkwhite {
     background-color: #FFEBEE;
 }
-.btn-dark:visited{
-    background-color: #551E1F; 
+
+.btn-dark:visited {
+    background-color: #551E1F;
 }
-.title-card-size, .table-modif, .table-modif-title{
+
+.title-card-size,
+.table-modif,
+.table-modif-title {
     font-size: 1em;
 }
-.separator{
+
+.separator {
     width: 100%;
     border: 0;
     height: 70px;
@@ -81,9 +98,9 @@
 h3 {
     font-family: 'Parisienne', cursive;
 }
- 
+
 #news {
-    background-color: #3A2C32 ;
+    background-color: #3A2C32;
     font-family: 'Parisienne', cursive;
 }
 
@@ -91,17 +108,6 @@ h3 {
     background-color: #faf2f2;
 }
 
-
-
-/* .vl {
-    border-left: 6px solid black;
-    height: 500px;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
-  }
-  */
 /* bouton up page */
 #btnUpPage {
     display: block;
@@ -125,63 +131,79 @@ h3 {
     padding: 0px 15px 15px 15px;
 }
 
-.btnplus{
+.btnplus {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
 }
-.btnmoins{
+
+.btnmoins {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
 }
+
 @media screen and (max-width:800px) {
 
-    #titreHeader{
+    #titreHeader {
         font-size: 6rem;
         padding-top: 6rem;
         padding-right: 0;
     }
-    #img-accueil{
+
+    #img-accueil {
         height: 40vh;
     }
-    .title-card-size, .table-modif, .table-modif-title{
+
+    .title-card-size,
+    .table-modif,
+    .table-modif-title {
         font-size: 0.85em;
     }
-    .img-fond{
+
+    .img-fond {
         background-size: cover;
     }
-    .separator{
+
+    .separator {
         height: 65px;
 
         background-size: 60%;
     }
 }
+
 @media screen and (max-width:450px) {
 
-    #titreHeader{
+    #titreHeader {
         font-size: 3rem;
         padding-top: 6rem;
     }
-    #img-accueil{
+
+    #img-accueil {
         width: 100%;
         height: 40vh;
     }
-    .title-card-size, .table-modif, .table-modif-title{
+
+    .title-card-size,
+    .table-modif,
+    .table-modif-title {
         font-size: 0.75em;
     }
-    .img-fond{
+
+    .img-fond {
         background-size: 150%;
     }
 }
+
 @media screen and (max-height:500px) {
 
-    #titreHeader{
+    #titreHeader {
         font-size: 6rem;
         padding-top: 1rem;
         padding-right: 0;
     }
-    #warning{
+
+    #warning {
         padding-top: 5rem;
-       }
+    }
 }

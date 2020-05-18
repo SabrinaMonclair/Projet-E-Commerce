@@ -9,7 +9,7 @@ window.onload = function minorBlock() {
 
 idWarningYes.onclick = showsite;
 
-function showsite(){
+function showsite() {
   idWarning.style.display = "none";
 }
 
@@ -72,7 +72,6 @@ let cardSine = ["Domaine Sine Qua Non - Autrement Dit 2006 - Rosé Californie US
 let cardBabylone = ["Les Jardins De Babylone - Didier Dagueneau -  Jurançon 2014", "assets/img/vins/babylone.png", "A Jurançon, le vignoble couvre 3 hectares en terrasses, exclusivement plantés de Petit Manseng.Une robe jaune foncée, reflet or pâle. Elle emprunte ses notes exotiques aux vins alsaciens, avec des embruns de caramel et de coing pour beaucoup de gourmandise. Ce vin de petit manseng possède un esprit singulier, riche de son onctuosité et délectable jusqu’à la dernière goutte par sa fraicheur", "112", "M001", "cardBabylone", 0]
 let cardYquem = ["Chateau Yquem 2001 - Sauternes 1er Cru Classé Supérieur", "assets/img/vins/yquem.png", "Majestueux dans sa tunique vieil or, il joue subtilement de ses parfums de fruit de la Passion, d'abricot, d'agrumes et de figue qu'il met en rivalité avec des fleurs et une pointe de muscade. A l'aération, ceux-ci deviennent de plus en plus présents et dominent le bouquet, complétés de pointes de vanille et de coing. Dense et ample, l'attaque s'ouvre sur un palais rond, enveloppant, riche, mais équilibré. Longue, la finale revéle des fruits frais et des notes d'abricot confit.", "630", "M002", "cardYquem", 0]
 
-
 //spirit
 let cardMacallan = ["The Macallan Rare Cask Black - Whisky, Speyside Ecosse", "assets/img/spiritueux/macallan.jpg", "Rare Cask Black est un mariage d'une centaine de fûts à prédominance sherry. Fabriqué à partir de whisky tourbé, très rarement produit à la distillerie il présente des notes de fruits secs, de muscade, de gingembre et de fumée.", "650", "S001", "cardMacallan", 0]
 let cardLagavulin = ["Lagavulin Distillers Edition 1980 - Whisky, Ecosse", "assets/img/spiritueux/lagavulin.jpg", "Une version vintage de 1980 de l'édition de distillateurs mûris PX Sherry de Lagavulin Ce millésime particulier a été publié il y a quelques années.", "1150", "S002", "cardLagavulin", 0]
@@ -80,7 +79,7 @@ let cardNikka = ["Nikka Yoichi 10y - Single Malt - Whisky, Hokkaido Japon", "ass
 let cardHibiki = ["Suntory Hibiki 17y - Single Malt - Whisky, Hakushu Japon", "assets/img/spiritueux/hibiki.jpg", "Un fantastique mélange japonais, fait de malt vieilli et de whiskies de grain des trois distilleries de Suntory. Épicé et sophistiqué, il est idéal pour surprendre les gens lors de dégustations à l'aveugle.", "550", "S004", "cardHibiki", 0]
 let cardParadis = ["Hennessy Paradis Imperial - Hennesy Cognac, France", "assets/img/spiritueux/paradis.png", "Hennessy Paradis Imperial est une création contemporaine de Yann Gillioux, septième génération de Maitres Assembleurs. Ce cognac fait de précision symbolise l'apogée de l'art de la sélection des eaux de vie, l'incessante quête de finesse et offre un assemblage au caractère unique et aux contrastes inattendus. A l'issue d'une récolte, le nombre moyen d'eaux de vie ayant le potentiel de rejoindre un jour cet assemblage est très faible : seulement 10 sur 10000. Une alliance inédite de l'âge et de la finesse, un cognac Hennessy complexe aux arômes floraux délicats additionnés à de légères notes épicées et fumées. Découvrez le luxe signé Hennessy.", "2540", "S007", "cardParadis", 0]
 let cardLouis = ["Louis XIII - La Maison Rémy Martin - Cognac, France", "assets/img/spiritueux/louis.png", "Depuis sa création en 1874, le cognac Louis XIII a été suivi par quatre générations de Maître de chai qui ont consacré leur vie à la sélection, à l'assemblage et au vieillissement des eaux-de-vie les plus extraordinaires. Véritable ambassadeur de l'art-de-vivre à la française, Louis XIII est un assemblage exclusif de 1200 eaux-de-vie âgées entre 40 et 100 ans dans un flacon qui a tout d'une oeuvre d'art. Chacune d'entre elles est vieillie dans des fût de chêne du Limousin …Un trésor intemporel qui vous embarque pour un sublime voyage à travers un siècle d'arômes.", "3100", "S008", "cardLouis", 0]
-let cardMerlin = ["Potion Magique - Limited Edition - 50 av. J.-C.", "assets//img/spiritueux/merlin.jpg", "Une potion magique dont seul Panoramix à la secret", "7777", "M007", "cardMLerlin", 0]
+let cardMerlin = ["Potion Magique - Limited Edition - 50 av. J.-C.", "assets//img/spiritueux/merlin.jpg", "Une potion magique dont seul Panoramix à la secret", "7777", "M007", "cardMerlin", 0]
 
 //appel fonction
 idChampagne.onclick = showCardChampagne;
@@ -88,27 +87,40 @@ idWine.onclick = showCardWine;
 idSpirit.onclick = showCardSpirit;
 idHomepage.onclick = showHomepage;
 
-
 // creation de la page d'accueil avec toutes les cards
 function showHomepage() {
   idMainArea.innerHTML =
     `<a class="h1 font-parisienne">Notre Maison</a>
-    <p>Œnothèque est une boutique spécialisée en vins de collections pour le plaisir des amateurs et des collectionneurs.
-      Notre sommelier a sélectionné les plus grands vins de notre territoire pour votre plus grand plaisir. Des bulles de la Champagne de nos plus grands terroirs aux parcelles de Bourgogne et de la vallée du Rhône en passant par les vins minéraux de la Loire et les vins tanniques du vignoble Bordelais et ainsi que ceux du Languedoc. La plupart de nos vins ont à excellent potentiel de garde et pourront rester dans votre cave afin de profiter pleinement des arômes.
-      Nos livraisons sont préparées avec soin et nous vous garantissons un emballage anti-casse.</p>
+    <p>Œnothèque est une boutique spécialisée en vins de collections pour le plaisir des amateurs et des
+        collectionneurs.
+        Notre sommelier a sélectionné les plus grands vins de notre territoire pour votre plus grand
+        plaisir. Des bulles de la Champagne de nos plus grands terroirs aux parcelles de Bourgogne et de la
+        vallée du Rhône en passant par les vins minéraux de la Loire et les vins tanniques du vignoble
+        Bordelais, ainsi que ceux du Languedoc. La plupart de nos vins ont un excellent potentiel de garde
+        et pourront rester dans votre cave afin de profiter pleinement des arômes.
+        Nos livraisons sont préparées avec soin et nous vous garantissons un emballage anti-casse.</p>
     <hr class="separator">
     <a class="h2 col-12 font-parisienne" onclick="showCardChampagne()">Champagne</a>
     <p>
-      Œnothèque vous propose un large choix de Champagne issu des meilleures maisons du vignoble champenois. La plupart de nos champagnes sont millésimés et viennent d'assemblage dans la parfaite tradition de la méthode champenoise, les bulles seront l'allié parfait pour vos aperitifs ou pour terminer en beauté autour d'un dessert. Nos Champagnes sont servis dans des coffrets luxe.
+        Œnothèque vous propose un large choix de Champagne issu des meilleures maisons du vignoble
+        champenois. La plupart de nos champagnes sont millésimés et viennent d'assemblage dans la parfaite
+        tradition de la méthode champenoise, les bulles seront l'allié parfait pour vos apéritifs ou pour
+        terminer en beauté autour d'un dessert. Nos Champagnes sont servis dans des coffrets luxe.
     </p>
     <hr class="separator">
     <a class="h2 col-12 font-parisienne" onclick="showCardWine()">Vins</a>
-    <p>Notre vinothèque met en avant nos cépages français dans une sélection issue des meilleurs domaines de France. Les blancs mettent en avant la minéralité du riesling et du sauvignon et la puissance du chardonnay et de la Marsanne. Les rouges offrent la puissance du fruit et l'équilibre en bouche. Nous vous proposons également la cuvée "Raven" et "Autrement Dit" du domaine Sine Qua Non de Californie mettant en avant les cépages rhodaniens. Les vins de dessert sont également à l'honneur avec l'inimitable Château Yquem et le terroir du Jurançon.
+    <p>Notre vinothèque met en avant nos cépages français dans une sélection issue des meilleurs domaines de
+        France. Les blancs mettent en avant la minéralité du riesling et du sauvignon et la puissance du
+        chardonnay et de la Marsanne. Les rouges offrent la puissance du fruit et l'équilibre en bouche.
+        Nous vous proposons également la cuvée "Raven" et "Autrement Dit" du domaine Sine Qua Non de
+        Californie mettant en avant les cépages rhodaniens. Les vins de dessert sont également à l'honneur
+        avec l'inimitable Château Yquem et le terroir du Jurançon.
     </p>
     <hr class="separator">
     <a class="h2 col-12 font-parisienne" onclick="showCardSpirit()">Spiritueux</a>
-    <p>Notre gamme de spiritueux est issue de bouteilles rares sélectionnées qui raviront les grands connaisseurs. Nos whiskys des Highlands d'Écosse au Japon mais également nos cognacs français mis à l'honneur avec l'ambassadeur Louis XIII.</p>
-`;
+    <p>Notre gamme de spiritueux est issue de bouteilles rares sélectionnées qui raviront les grands
+        connaisseurs. Nos whiskys des Highlands d'Écosse au Japon mais également nos cognacs français mis à
+        l'honneur avec l'ambassadeur Louis XIII.</p>`;
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
@@ -174,6 +186,7 @@ function showCardSpirit() {
     behavior: 'smooth'
   });
 }
+
 // creation de la card et de sa modale
 function createCard(type) {
   idMainArea.innerHTML +=
