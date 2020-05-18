@@ -27,6 +27,8 @@ let idWine = document.getElementById("wine");
 let idSpirit = document.getElementById("spirit");
 let idMainArea = document.getElementById("mainArea");
 let idCartList = document.getElementById("cartlist");
+let totalPrice = 0;
+let idBuyTotal = document.getElementById("buytotal");
 
 // EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001","cardNom", 0]
 //champagne
@@ -55,19 +57,22 @@ let cardYquem = ["Chateau Yquem 2001 - Sauternes 1er Cru Classé Supérieur", "a
 
 
 //spirit
-
-
-
-
-
+let cardMacallan = ["The Macallan Rare Cask Black - Whisky, Ecosse", "assets/img/spiritueux/macallan.jpg", "Rare Cask Black est un mariage d'une centaine de fûts à prédominance sherry. Fabriqué à partir de whisky tourbé, très rarement produit à la distillerie il présente des notes de fruits secs, de muscade, de gingembre et de fumée.", "650", "S001", "cardMacallan", 0]
+let cardLagavulin = ["Lagavulin Distillers Edition 1980 - Whisky, Ecosse", "assets/img/spiritueux/lagavulin.jpg", "Une version vintage de 1980 de l'édition de distillateurs mûris PX Sherry de Lagavulin Ce millésime particulier a été publié il y a quelques années.", "1150", "S002", "cardLagavulin", 0]
+let cardNikka = ["Nikka Yoichi 10y - Single Malt - Whisky, Japon", "assets/img/spiritueux/nikka.jpg", "Un single malt de dix ans, élégamment tourbé, de la belle distillerie Yoichi de Nikka à Hokkaido, où le whisky est fabriqué tel qu'il était en Écosse avec de petits alambics à cuisson directe et mûri dans le bois le plus fin que la société puisse trouver. Mis en bouteille à 45% pour plus de punch.", "420", "S003", "cardNikka", 0]
+let cardHibiki = ["Suntory Hibiki 17y - Single Malt - Whisky, Japon", "assets/img/spiritueux/hibiki.jpg", "Un fantastique mélange japonais, fait de malt vieilli et de whiskies de grain des trois distilleries de Suntory. Épicé et sophistiqué, il est idéal pour surprendre les gens lors de dégustations à l'aveugle.", "550", "S004", "cardHibiki", 0]
+let cardParadis = ["Hennessy Paradis Imperial - Cognac, France", "assets/img/spiritueux/paradis.png", "Hennessy Paradis Imperial est une création contemporaine de Yann Gillioux, septième génération de Maitres Assembleurs. Ce cognac fait de précision symbolise l'apogée de l'art de la sélection des eaux de vie, l'incessante quête de finesse et offre un assemblage au caractère unique et aux contrastes inattendus. A l'issue d'une récolte, le nombre moyen d'eaux de vie ayant le potentiel de rejoindre un jour cet assemblage est très faible : seulement 10 sur 10000. Une alliance inédite de l'âge et de la finesse, un cognac Hennessy complexe aux arômes floraux délicats additionnés à de légères notes épicées et fumées. Découvrez le luxe signé Hennessy.", "2540", "S007", "cardParadis", 0]
+let cardLouis = ["Louis XIII - Rémy Martin - Cognac, France", "assets/img/spiritueux/louis.png", "Depuis sa création en 1874, le cognac Louis XIII a été suivi par quatre générations de Maître de chai qui ont consacré leur vie à la sélection, à l'assemblage et au vieillissement des eaux-de-vie les plus extraordinaires. Véritable ambassadeur de l'art-de-vivre à la française, Louis XIII est un assemblage exclusif de 1200 eaux-de-vie âgées entre 40 et 100 ans dans un flacon qui a tout d'une oeuvre d'art. Chacune d'entre elles est vieillie dans des fût de chêne du Limousin …Un trésor intemporel qui vous embarque pour un sublime voyage à travers un siècle d'arômes.", "3100", "S008", "cardLouis", 0]
 
 //appel fonction
 idChampagne.onclick = showCardChampagne;
 idWine.onclick = showCardWine;
 idSpirit.onclick = showCardSpirit;
 
+// creation de la page champages avec toute les cards
 function showCardChampagne() {
   idMainArea.innerText = "";
+
   createCard(cardSiecle);
   createCard(cardKrug);
   createCard(cardCristal);
@@ -76,13 +81,14 @@ function showCardChampagne() {
   createCard(cardSalon);
   createCard(cardTaittinger);
   createCard(cardKrugR);
-  
+
   window.scrollTo({
     top: 500,
     behavior: 'smooth'
   });
 }
 
+// creation de la page vins avec toute les cards
 function showCardWine() {
   idMainArea.innerText = "";
 
@@ -105,10 +111,16 @@ function showCardWine() {
   });
 }
 
-
+// creation de la page Spiriteux avec toute les cards
 function showCardSpirit() {
   idMainArea.innerText = "";
- 
+
+  createCard(cardMacallan);
+  createCard(cardLagavulin);
+  createCard(cardNikka);
+  createCard(cardHibiki);
+  createCard(cardParadis);
+  createCard(cardLouis);
 
   window.scrollTo({
     top: 500,
@@ -116,14 +128,14 @@ function showCardSpirit() {
   });
 }
 
-
+// creation de la card et de sa modale
 function createCard(type) {
   idMainArea.innerHTML +=
-    `   <div class="col-6 col-sm-5 col-md-4 col-lg-3 py-2">
+    `   <div class="col-6 col-md-4 col-lg-3 py-2 px-1 px-md-2 ">
         <div class="card shadow">
         <img src="${type[1]}" class="card-img-top" alt="image ${type[0]}">
         <div class="card-body text-darkwine">
-            <h5 class="card-title">${type[0]}</h5>
+            <h5 class="card-title title-card-size">${type[0]}</h5>
             <p class="card-text"></p>
             <a href="#" class="btn btn-dark text-pinkwhite bg-pinkdark" data-toggle="modal" data-target="#${type[4]}">Accéder au Produit</a>
             <span class="badge text-pinkwhite bg-darkwine">${type[3]}€</span>
@@ -152,8 +164,8 @@ function createCard(type) {
                 
                 <span class="text-pinkwhite bg-darkwine p-2 h3 text-center"><i><b>${type[3]} </b>€</i></span>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
+                    <button type="button" class="btn btn-dark text-pinkwhite bg-darkwine" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-dark text-pinkwhite bg-pinkdark" onclick="addToBasket(${type[5]})" data-dismiss="modal" >Mettre dans le panier</button>
                 </div>
             </div>
         </div>
@@ -161,67 +173,73 @@ function createCard(type) {
       </div>`;
 }
 
+// ajout d'une ligne de tableau dans la modal panier en fonction de la card 
 function addToBasket(type) {
-
+  let idnumber = document.getElementById(`number${type[4]}`);
+  //quand on click la 1ere fois sur ajouté au panier d'une des bouteil, ca augmente la quantité de cette bouteille et ca ajoute le tableau
   if (type[6] === 0) {
-    console.log(type[6] + "oui");
     type[6]++;
     idCartList.innerHTML +=
-  ` <tr id="table${type[4]}">
+      ` <tr id="table${type[4]}">
       <th scope="row"><img src="${type[1]}" class="card-img-top" style="width: 4em;" alt="image ${type[0]}"></th>
       <td>${type[0]}</td>
-      <td class="h5"><b>${type[3]}€</b></td>
-      <td class="h5" id="number${type[4]}">${type[6]}</td>
-      <td><button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button><button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button></td>
-      <td class="h5" id="result${type[4]}"><b>${type[3]} €</b></td>
+      <td class="h5"><b>${type[3]}</b>€</td>
+      <td class="h5" id="number${type[4]}">
+        ${type[6]}<br>
+        <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
+        <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+      </td>
+      <td class="h5" id="result${type[4]}"><b>${type[3]}</b> €</td>
     </tr>`;
-
   } else {
+    //si on click a nouveau sur la mm boutail dans le shop, ca ajoute une bouteille de plus au panier
     type[6]++;
-    let idnumber = document.getElementById(`number${type[4]}`);
-    idnumber.innerText = type[6];
-    console.log(type[6] + "non");
+    idnumber.innerHTML = 
+      `${type[6]}<br>
+      <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
+      <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>`;
   }
-  let idnumber = document.getElementById(`number${type[4]}`);
-
-  // let valueUp = document.getElementById(`Up${type[4]}`);
-  // let valueDown = document.getElementById(`Down${type[4]}`);
-
-  // document.getElementById(`Up${type[4]}`).addEventListener("click", function() {
-  //   type[6]++;
-  //   console.log("salut");
-  //   idnumber.innerText = type[6];
-
-  // })
-
-  // document.getElementById(`Down${type[4]}`).addEventListener("click", function() {
-  //   type[6]--;
-  //   console.log(type[6] + "au revoir");
-  //   idnumber.innerText = type[6]; 
-  // })
-
+  //ajout du prix sur le total global
+  totalPrice = Number(totalPrice) + Number(type[3]);
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
-let totalPriceArray = [];
-let idBuyTotal = document.getElementById("buytotal");
 
-
-function functionBtnUp(type){
+//fonction bouton + avais ajout du total sur le bouton payement
+function functionBtnUp(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
+
   type[6]++;
-  idnumber.innerText = type[6];
-  idResult.innerText = type[3]*type[6] +" €";
- 
+  idnumber.innerHTML = 
+    `${type[6]}<br>
+    <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
+    <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+  `;
+  idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
+
+  //total -> bouton payement
+  totalPrice = Number(totalPrice) + Number(type[3]);
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
-function functionBtnDown(type){
+
+//fonction bouton - avais ajout du total sur le bouton payement
+function functionBtnDown(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
   let idTable = document.getElementById(`table${type[4]}`);
 
   type[6]--;
-  idnumber.innerText = type[6]; 
-  idResult.innerText = type[3]*type[6] +" €";
- if (type[6]<1){
-  idTable.innerHTML = "";
- }
+  idnumber.innerHTML = 
+    `${type[6]}<br>
+    <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
+    <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+  `;
+  idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
+  // si le nombre de bouteil = 0 alors ca supprime la ligne du tableau
+  if (type[6] < 1) {
+    idTable.innerHTML = "";
+  }
+  //total -> bouton payement
+  totalPrice = Number(totalPrice) - Number(type[3]);
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
 }
