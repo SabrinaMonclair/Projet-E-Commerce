@@ -60,7 +60,16 @@ ul li{
 .title-card-size, .table-modif, .table-modif-title{
     font-size: 1em;
 }
-
+.separator{
+    width: 100%;
+    border: 0;
+    height: 70px;
+    opacity: 25%;
+    background-image: url(../img/separateur.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
 
 /* Footer*/
 h3 {
@@ -135,6 +144,11 @@ h3 {
     }
     .img-fond{
         background-size: cover;
+    }
+    .separator{
+        height: 65px;
+
+        background-size: 60%;
     }
 }
 @media screen and (max-width:450px) {
