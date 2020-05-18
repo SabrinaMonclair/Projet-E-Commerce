@@ -263,7 +263,7 @@ function functionBtnDown(type) {
   if (type[6] < 1) {
     idTable.innerHTML = "";
   }
-  //total -> bouton payement
+  //total -> bouton paiement
   totalPrice = Number(totalPrice) - Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
   //Si le prix total du panier est supérieur a 0, alors l'icône change, sinon elle redevient vide.
