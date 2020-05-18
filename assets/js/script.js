@@ -22,6 +22,7 @@ function topFunction() {
 }
 
 // card pour la page
+let idHomepage = document.getElementById("homepage");
 let idChampagne = document.getElementById("champagne");
 let idWine = document.getElementById("wine");
 let idSpirit = document.getElementById("spirit");
@@ -69,6 +70,13 @@ let cardLouis = ["Louis XIII - Rémy Martin - Cognac, France", "assets/img/spiri
 idChampagne.onclick = showCardChampagne;
 idWine.onclick = showCardWine;
 idSpirit.onclick = showCardSpirit;
+idHomepage.onclick = showHomepage;
+
+
+// creation de la page d'accueil avec toute les cards
+function showHomepage(){
+  idMainArea.innerText = `HOME PAGE a copier coller`;
+}
 
 // creation de la page champages avec toute les cards
 function showCardChampagne() {
@@ -84,7 +92,7 @@ function showCardChampagne() {
   createCard(cardKrugR);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
@@ -107,7 +115,7 @@ function showCardWine() {
   createCard(cardYquem);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
@@ -124,7 +132,7 @@ function showCardSpirit() {
   createCard(cardLouis);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
@@ -176,6 +184,7 @@ function createCard(type) {
 
 // ajout d'une ligne de tableau dans la modal panier en fonction de la card 
 function addToBasket(type) {
+  let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
   //quand on click la 1ere fois sur ajouté au panier d'une des bouteil, ca augmente la quantité de cette bouteille et ca ajoute le tableau
   if (type[6] === 0) {
@@ -187,8 +196,8 @@ function addToBasket(type) {
       <td class=""><b>${type[3]}</b>€</td>
       <td class="" id="number${type[4]}">
         ${type[6]}<br>
-        <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
-        <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+        <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
+        <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>
       </td>
       <td class="" id="result${type[4]}"><b>${type[3]}</b>€</td>
     </tr>`;
@@ -197,9 +206,11 @@ function addToBasket(type) {
     type[6]++;
     idnumber.innerHTML =
       `${type[6]}<br>
-      <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
-      <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>`;
+      <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
+      <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>`;
+    idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
   }
+  
   //ajout du prix sur le total global
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
@@ -219,8 +230,8 @@ function functionBtnUp(type) {
   type[6]++;
   idnumber.innerHTML =
     `${type[6]}<br>
-    <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
-    <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+    <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
+    <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>
   `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
 
@@ -244,8 +255,8 @@ function functionBtnDown(type) {
   type[6]--;
   idnumber.innerHTML =
     `${type[6]}<br>
-    <button class="btnplus" type="button" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})">+</button>
-    <button type="button" class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})">-</button>
+    <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
+    <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>
   `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
   // si le nombre de bouteil = 0 alors ca supprime la ligne du tableau
