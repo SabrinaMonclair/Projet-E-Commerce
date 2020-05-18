@@ -84,7 +84,7 @@ function showCardChampagne() {
   createCard(cardKrugR);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
@@ -107,7 +107,7 @@ function showCardWine() {
   createCard(cardYquem);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
@@ -124,7 +124,7 @@ function showCardSpirit() {
   createCard(cardLouis);
 
   window.scrollTo({
-    top: 500,
+    top: 365,
     behavior: 'smooth'
   });
 }
