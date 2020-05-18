@@ -261,6 +261,4 @@ function functionBtnDown(type) {
   } else {
     idIconCart.innerHTML = `<img src="assets/img/cartempty.png" alt="Panier Vide" style="width: 2.5em; height: 2.5em;">`
   }
-
-
 }
