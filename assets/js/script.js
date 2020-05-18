@@ -1,4 +1,8 @@
 // bouton up page
+window.onload = function minorBlock(){
+  console.log("saucisse");
+ }
+
 let idBtnUpPage = document.getElementById("btnUpPage");
 
 window.onscroll = function () {
@@ -136,7 +140,6 @@ function showCardSpirit() {
     behavior: 'smooth'
   });
 }
-
 // creation de la card et de sa modale
 function createCard(type) {
   idMainArea.innerHTML +=
