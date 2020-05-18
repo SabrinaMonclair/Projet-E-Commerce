@@ -72,6 +72,7 @@ idSpirit.onclick = showCardSpirit;
 // creation de la page champages avec toute les cards
 function showCardChampagne() {
   idMainArea.innerText = "";
+  
   createCard(cardSiecle);
   createCard(cardKrug);
   createCard(cardCristal);
@@ -113,7 +114,7 @@ function showCardWine() {
 // creation de la page Spiriteux avec toute les cards
 function showCardSpirit() {
   idMainArea.innerText = "";
-  
+
   createCard(cardMacallan);
   createCard(cardLagavulin);
   createCard(cardNikka);
@@ -130,7 +131,7 @@ function showCardSpirit() {
 // creation de la card et de sa modale
 function createCard(type) {
   idMainArea.innerHTML +=
-    `   <div class="col-6 col-sm-5 col-md-4 col-lg-3 py-2">
+    `   <div class="col-6 col-md-4 col-lg-3 py-2">
         <div class="card shadow">
         <img src="${type[1]}" class="card-img-top" alt="image ${type[0]}">
         <div class="card-body text-darkwine">
@@ -205,6 +206,7 @@ function functionBtnUp(type) {
   type[6]++;
   idnumber.innerText = type[6];
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b> €";
+
   //total -> bouton payement
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
@@ -227,6 +229,10 @@ function functionBtnDown(type) {
     totalPrice = Number(totalPrice) - Number(type[3]);
     idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
   }
+  //total -> bouton payement
+  totalPrice = Number(totalPrice) - Number(type[3]);
+  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
+
   //total -> bouton payement
   totalPrice = Number(totalPrice) - Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";

@@ -51,6 +51,26 @@ h3 {
     font-family: 'Parisienne', cursive;
 }
  
+#news {
+    background-color: #3A2C32 ;
+    font-family: 'Parisienne', cursive;
+}
+
+.bg-pinkish {
+    background-color: #faf2f2;
+}
+
+
+
+/* .vl {
+    border-left: 6px solid black;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+  }
+  */
 /* bouton up page */
 #btnUpPage {
     display: block;
