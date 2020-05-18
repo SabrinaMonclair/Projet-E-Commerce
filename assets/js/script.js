@@ -100,9 +100,13 @@ function showHomepage() {
         et pourront rester dans votre cave afin de profiter pleinement des arômes.
         Nos livraisons sont préparées avec soin et nous vous garantissons un emballage anti-casse.</p>
     <hr class="separator">
-    <a class="h2 col-12 font-parisienne" onclick="showCardChampagne()">Champagne</a>
+    <a class="h2 col-12 font-parisienne" onclick="showCardChampagne()">Champagnes</a>
     <p>
+<<<<<<< HEAD
         Œnothèque vous propose un large choix de Champagne issu des meilleures maisons du vignoble
+=======
+        Œnothèque vous propose un large choix de champagne issu des meilleures maisons du vignoble
+>>>>>>> 893d3aa3228566130cabfc0b67fb1135c4345b70
         champenois. La plupart de nos champagnes sont millésimés et viennent d'assemblage dans la parfaite
         tradition de la méthode champenoise, les bulles seront l'allié parfait pour vos apéritifs ou pour
         terminer en beauté autour d'un dessert. Nos Champagnes sont servis dans des coffrets luxe.
@@ -120,7 +124,12 @@ function showHomepage() {
     <a class="h2 col-12 font-parisienne" onclick="showCardSpirit()">Spiritueux</a>
     <p>Notre gamme de spiritueux est issue de bouteilles rares sélectionnées qui raviront les grands
         connaisseurs. Nos whiskys des Highlands d'Écosse au Japon mais également nos cognacs français mis à
+<<<<<<< HEAD
         l'honneur avec l'ambassadeur Louis XIII.</p>`;
+=======
+        l'honneur avec l'ambassadeur Louis XIII.</p>
+`;
+>>>>>>> 893d3aa3228566130cabfc0b67fb1135c4345b70
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
@@ -295,7 +304,6 @@ function functionBtnUp(type) {
     idIconCart.innerHTML = `<img src="assets/img/cartempty.png" alt="Panier Vide" style="width: 2.5em; height: 2.5em;">`
   }
 }
-
 //Fonction des boutons "moins" avec ajout total sur le prix du paiement.
 function functionBtnDown(type) {
   let idResult = document.getElementById(`result${type[4]}`);
