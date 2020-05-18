@@ -34,10 +34,10 @@ let idIconCart = document.getElementById("icon-cart");
 
 // EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001","cardNom", 0]
 //champagne
-let cardSiecle = ["Champagne Laurent Perrier Grand Siécle N°24", "assets/img/champagne/siecle.png", "Grand siècle est la cuvée de prestige de la maison Laurent-Perrier, signature de son exigence ! Cette itération n°24 de Grand Siècle est le fruit de l'assemblage de trois années exceptionnelles millésimées (2007, 2006 et 2004) et vieillit 7 années minimum en cave.", "110", "C001", "cardSiecle", 0]
+let cardSiecle = ["Champagne Laurent Perrier Grand Siècle N°24", "assets/img/champagne/siecle.png", "Grand siècle est la cuvée de prestige de la maison Laurent-Perrier, signature de son exigence ! Cette itération n°24 de Grand Siècle est le fruit de l'assemblage de trois années exceptionnelles millésimées (2007, 2006 et 2004) et vieillit 7 années minimum en cave.", "110", "C001", "cardSiecle", 0]
 let cardKrug = ["Champagne KRUG - Grande Cuvée 167 Edition", "assets/img/champagne/krug.png", "Krug Grande cuvée est né en 1843 de la volonté de Joseph Krug. Cet assemblage de 191 vins provenant de 13 millésimes diférents (de 1995 à 2011) dont 42% de vins de réserve a reposé durant 7 longues années en cave. Découvrez la 167ème édition et son unique richesse en saveurs et en arômes.", "185", "C002", "cardKrug", 0]
 let cardCristal = ["Champagne Louis Roederer - CRISTAL 2012", "assets/img/champagne/cristal.png", "Nous sommes à l'apogée de Cristal, un superbe équilibre, une évanescence scintillante, tant d'élégance et d'harmonie dans les accords. Cette cuvée bénéficie en moyenne de 10 années de maturation en cave avant que le mythe ne s'offre à vous.", "220", "C003", "cardCristal", 0]
-let cardWinston = ["Champagne Pol Roger - Cuvée Winston Churchill 2009", "assets/img/champagne/winston.png", "Élaborée uniquement dans les meilleurs millésimes de la maison Pol Roger, la cuvée a été créée en hommage à Sir Winston Churchill, avec pour références les qualités qu'il appréciait dans le champagne: robustesse, charpente et maturité. Un Champagne qui mérite d'être oublié en cave pour dévoiler une palette aromatique exceptionnelle. tout en finesse, simplement un diamant fourni par un millésime d'exception.", "250", "C004", "cardWinston", 0]
+let cardWinston = ["Champagne Pol Roger - Cuvée Winston Churchill 2009", "assets/img/champagne/winston.png", "Élaborée uniquement dans les meilleurs millésimes de la maison Pol Roger, la cuvée a été créée en hommage à Sir Winston Churchill, avec pour références les qualités qu'il appréciait dans le champagne: robustesse, charpente et maturité. Un champagne qui mérite d'être oublié en cave pour dévoiler une palette aromatique exceptionnelle. tout en finesse, simplement un diamant fourni par un millésime d'exception.", "250", "C004", "cardWinston", 0]
 let cardBollinger = ["Champagne Bollinger Coffret 007 - Millésime 2011", "assets/img/champagne/bollinger.png", "La Maison Bollinger dévoile pour cet évènement le millésime 2011, exclusivement issus de grands crus de Pinot Noir du village d'Ay. C'est la premère fois que la maison élabore une cuvée issue uniquement de ce cru historique ou la maison est implantée depuis sa création en 1829. Avis aux collectionneurs!", "320", "C005", "cardBollinger", 0]
 let cardSalon = ["Champagne Salon - Blanc de Blancs - Le Mesnil 2007", "assets/img/champagne/salon.png", "La Maison Salon nous offre une cuvée complexe, savoureuse et gourmande. On retrouve également beaucoup de précision dans une bouche très nerveuse et envoutante. De très nombreuses années de garde sont devant cette belle cuvée, années durant lesquelles ce Champagne s'affinera et laissera exalter tous ses dons au moment de sa dégustation.", "950", "C006", "cardSalon", 0]
 let cardTaittinger = ["Champagne Taittinger Rosé - Comtes de Champagne 2007", "assets/img/champagne/taittinger.png", "Le Comtes de Champagne Rosé puise sa noblesse dans le long vieillissement en caves dont il bénéficie. Durant toutes ces années, ce champagne Grand Cru à la composition pure et exigeante, va affiner sa matière pour parvenir à un équilibre soyeux et savoureux, jusqu’à ce qu’il devienne totalement fondu en une multitude de particules de petit fruits rouges légèrement grillés, un équilibre entre fraîcheur et structure.", "170", "CR001", "cardTaittinger", 0]
@@ -73,12 +73,12 @@ idSpirit.onclick = showCardSpirit;
 idHomepage.onclick = showHomepage;
 
 
-// creation de la page d'accueil avec toute les cards
+// creation de la page d'accueil avec toutes les cards
 function showHomepage(){
   idMainArea.innerText = `HOME PAGE a copier coller`;
 }
 
-// creation de la page champages avec toute les cards
+// creation de la page champagnes avec toutes les cards
 function showCardChampagne() {
   idMainArea.innerText = "";
 
@@ -120,7 +120,7 @@ function showCardWine() {
   });
 }
 
-// creation de la page Spiriteux avec toute les cards
+// création de la page Spiriteux avec toutes les cards
 function showCardSpirit() {
   idMainArea.innerText = "";
 
@@ -182,11 +182,11 @@ function createCard(type) {
       </div>`;
 }
 
-// ajout d'une ligne de tableau dans la modal panier en fonction de la card 
+// ajout d'une ligne de tableau dans la modale panier en fonction de la card 
 function addToBasket(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
-  //quand on click la 1ere fois sur ajouté au panier d'une des bouteil, ca augmente la quantité de cette bouteille et ca ajoute le tableau
+  //Quand on clic la première fois sur "Ajoutez au panier" d'une des bouteilles, ça augmente la quantité de cette bouteille et ça créé le tableau.
   if (type[6] === 0) {
     type[6]++;
     idCartList.innerHTML +=
@@ -202,7 +202,7 @@ function addToBasket(type) {
       <td class="" id="result${type[4]}"><b>${type[3]}</b>€</td>
     </tr>`;
   } else {
-    //si on click a nouveau sur la mm boutail dans le shop, ca ajoute une bouteille de plus au panier
+    //Si on clic à nouveau sur la même bouteille dans le magasin, ça ajoute une bouteille de plus au panier.
     type[6]++;
     idnumber.innerHTML =
       `${type[6]}<br>
@@ -211,10 +211,10 @@ function addToBasket(type) {
     idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
   }
   
-  //ajout du prix sur le total global
+  //Ajout du prix sur le total.
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  //si le prix total est supperieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  //Si le prix total du panier est supérieur a 0, alors l'icône change, sinon elle redevient vide.
   if (totalPrice > 0) {
     idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
   } else {
@@ -222,7 +222,7 @@ function addToBasket(type) {
   }
 }
 
-//fonction bouton + avais ajout du total sur le bouton payement
+//Fonction des boutons "moins" avec ajout total sur le prix du paiement.
 function functionBtnUp(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
@@ -235,10 +235,10 @@ function functionBtnUp(type) {
   `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
 
-  //total -> bouton payement
+  //Total -> bouton paiement 
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  //si le prix total est supperieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  //Si le prix total du panier est supérieur a 0, alors l'icône change, sinon elle redevient vide.
   if (totalPrice > 0) {
     idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
   } else {
@@ -246,7 +246,7 @@ function functionBtnUp(type) {
   }
 }
 
-//fonction bouton - avais ajout du total sur le bouton payement
+//Fonction des boutons "moins" avec ajout total sur le prix du paiement.
 function functionBtnDown(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
@@ -259,14 +259,14 @@ function functionBtnDown(type) {
     <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>
   `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
-  // si le nombre de bouteil = 0 alors ca supprime la ligne du tableau
+  // Si le nombre de bouteille est égal à zéro, la ligne disparaît.
   if (type[6] < 1) {
     idTable.innerHTML = "";
   }
   //total -> bouton payement
   totalPrice = Number(totalPrice) - Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  //si le prix total est superieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  //Si le prix total du panier est supérieur a 0, alors l'icône change, sinon elle redevient vide.
   if (totalPrice > 0) {
     idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
   } else {
