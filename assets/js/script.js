@@ -1,8 +1,19 @@
-// bouton up page
+// pop-up majeur ?
+let idWarningYes = document.getElementById("warning-yes");
+let idWarning = document.getElementById("warning");
+
 window.onload = function minorBlock() {
- document.getElementById("warning").focus();
+  idWarning.focus();
+  idWarning.style.display = "block";
 }
 
+idWarningYes.onclick = showsite;
+
+function showsite(){
+  idWarning.style.display = "none";
+}
+
+//function bouton up to top
 let idBtnUpPage = document.getElementById("btnUpPage");
 
 window.onscroll = function () {
