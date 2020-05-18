@@ -20,7 +20,7 @@
     background-image: url(../img/vigne.png);
     background-position: top left;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100%;
 }
 .text-darkwine{
     color: #3A2C32;
@@ -124,6 +124,9 @@ h3 {
     .title-card-size, .table-modif, .table-modif-title{
         font-size: 0.85em;
     }
+    .img-fond{
+        background-size: cover;
+    }
 }
 @media screen and (max-width:450px) {
 
@@ -137,5 +140,16 @@ h3 {
     }
     .title-card-size, .table-modif, .table-modif-title{
         font-size: 0.75em;
+    }
+    .img-fond{
+        background-size: 150%;
+    }
+}
+@media screen and (max-height:500px) {
+
+    #titreHeader{
+        font-size: 6rem;
+        padding-top: 1rem;
+        padding-right: 0;
     }
 }
