@@ -125,6 +125,11 @@ h3 {
     cursor: pointer;
 }
 
+.btn-no:hover{
+    color: #FFEBEE;
+    background-color: rgb(48, 36, 41);
+}
+
 #btnUpPage:hover {
     background-color: rgb(61, 24, 25);
     padding: 0px 15px 15px 15px;

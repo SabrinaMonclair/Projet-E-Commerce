@@ -46,6 +46,8 @@ let idCartList = document.getElementById("cartlist");
 let totalPrice = 0;
 let idBuyTotal = document.getElementById("buytotal");
 let idIconCart = document.getElementById("icon-cart");
+let idCartEmpty = document.getElementById("cartempty");
+
 
 // EX : let cardNom = ["nom", "champage/img.png", "description", "prix", "ref-0001","cardNom", 0]
 //champagne
@@ -259,8 +261,10 @@ function addToBasket(type) {
       <a class="btnplus" id="Up${type[4]}" onclick="functionBtnUp(${type[5]})"><img src="assets/img/plus.png" style="width: 2rem;" alt="plus"></a>
       <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>`;
     idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
+    
   }
-
+  //le panier c'est plus vide
+  idCartEmpty.innerHTML =``;
   //Ajout du prix sur le total.
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
@@ -317,8 +321,10 @@ function functionBtnDown(type) {
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
   //Si le prix total du panier est supérieur a 0, alors l'icône change, sinon elle redevient vide.
   if (totalPrice > 0) {
-    idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
+    idCartEmpty.innerHTML =``;
+    idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`;
   } else {
-    idIconCart.innerHTML = `<img src="assets/img/cartempty.png" alt="Panier Vide" style="width: 2.5em; height: 2.5em;">`
+    idCartEmpty.innerHTML =`Votre panier est Vide !`;
+    idIconCart.innerHTML = `<img src="assets/img/cartempty.png" alt="Panier Vide" style="width: 2.5em; height: 2.5em;">`;
   }
 }
