@@ -132,7 +132,6 @@ function showCardSpirit() {
 // creation de la card et de sa modale
 function createCard(type) {
   idMainArea.innerHTML +=
-    `   <div class="col-6 col-md-4 col-lg-3 py-2">
     `   <div class="col-6 col-md-4 col-lg-3 py-2 px-1 px-md-2 ">
         <div class="card shadow">
         <img src="${type[1]}" class="card-img-top" alt="image ${type[0]}">
@@ -253,18 +252,9 @@ function functionBtnDown(type) {
   if (type[6] < 1) {
     idTable.innerHTML = "";
   }
-    //total -> bouton payement
-    totalPrice = Number(totalPrice) - Number(type[3]);
-    idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  }
   //total -> bouton payement
   totalPrice = Number(totalPrice) - Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-
-  //total -> bouton payement
-  totalPrice = Number(totalPrice) - Number(type[3]);
-  idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-
   //si le prix total est superieur a 0 alors l'icone du panier change sinon elle redeviens vide
   if (totalPrice > 0) {
     idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
