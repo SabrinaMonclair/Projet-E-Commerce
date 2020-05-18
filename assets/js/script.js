@@ -79,7 +79,28 @@ idHomepage.onclick = showHomepage;
 
 // creation de la page d'accueil avec toutes les cards
 function showHomepage(){
-  idMainArea.innerText = `HOME PAGE a copier coller`;
+  idMainArea.innerHTML = 
+  `<a class="h1 font-parisienne">Notre Maison</a>
+    <p>Œnothèque est une boutique spécialisée en vins de collections pour le plaisir des amateurs et des collectionneurs.
+      Notre sommelier a sélectionné les plus grands vins de notre territoire pour votre plus grand plaisir. Des bulles de la Champagne de nos plus grands terroirs aux parcelles de Bourgogne et de la vallée du Rhône en passant par les vins minéraux de la Loire et les vins tanniques du vignoble Bordelais et ainsi que ceux du Languedoc. La plupart de nos vins ont à excellent potentiel de garde et pourront rester dans votre cave afin de profiter pleinement des arômes.
+      Nos livraisons sont préparées avec soin et nous vous garantissons un emballage anti-casse.</p>
+    <hr class="separator">
+    <a class="h2 col-12 font-parisienne" onclick="showCardChampagne()">Champagne</a>
+    <p>
+      Œnothèque vous propose un large choix de Champagne issu des meilleures maisons du vignoble champenois. La plupart de nos champagnes sont millésimés et viennent d'assemblage dans la parfaite tradition de la méthode champenoise, les bulles seront l'allié parfait pour vos aperitifs ou pour terminer en beauté autour d'un dessert. Nos Champagnes sont servis dans des coffrets luxe.
+    </p>
+    <hr class="separator">
+    <a class="h2 col-12 font-parisienne" onclick="showCardWine()">Vins</a>
+    <p>Notre vinothèque met en avant nos cépages français dans une sélection issue des meilleurs domaines de France. Les blancs mettent en avant la minéralité du riesling et du sauvignon et la puissance du chardonnay et de la Marsanne. Les rouges offrent la puissance du fruit et l'équilibre en bouche. Nous vous proposons également la cuvée "Raven" et "Autrement Dit" du domaine Sine Qua Non de Californie mettant en avant les cépages rhodaniens. Les vins de dessert sont également à l'honneur avec l'inimitable Château Yquem et le terroir du Jurançon.
+    </p>
+    <hr class="separator">
+    <a class="h2 col-12 font-parisienne" onclick="showCardSpirit()">Spiritueux</a>
+    <p>Notre gamme de spiritueux est issue de bouteilles rares sélectionnées qui raviront les grands connaisseurs. Nos whiskys des Highlands d'Écosse au Japon mais également nos cognacs français mis à l'honneur avec l'ambassadeur Louis XIII.</p>
+`;
+window.scrollTo({
+  top: 0,
+  behavior: 'smooth'
+});
 }
 
 // creation de la page champagnes avec toutes les cards
