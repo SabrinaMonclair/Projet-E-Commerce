@@ -105,11 +105,12 @@ h3 {
 .btnplus{
     width: 2rem;
     height: 2rem;
+    cursor: pointer;
 }
 .btnmoins{
     width: 2rem;
     height: 2rem;
-    padding: 1px;
+    cursor: pointer;
 }
 @media screen and (max-width:800px) {
 
