@@ -22,6 +22,14 @@
     background-repeat: no-repeat;
     background-size: 100%;
 }
+
+ul li{
+    float: none;
+    text-align: center;
+}
+.leftbutton{
+    margin-right: 2rem;
+}
 .text-darkwine{
     color: #3A2C32;
 }
@@ -52,7 +60,16 @@
 .title-card-size, .table-modif, .table-modif-title{
     font-size: 1em;
 }
-
+.separator{
+    width: 100%;
+    border: 0;
+    height: 70px;
+    opacity: 25%;
+    background-image: url(../img/separateur.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
 
 /* Footer*/
 h3 {
@@ -127,6 +144,11 @@ h3 {
     }
     .img-fond{
         background-size: cover;
+    }
+    .separator{
+        height: 65px;
+
+        background-size: 60%;
     }
 }
 @media screen and (max-width:450px) {

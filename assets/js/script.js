@@ -73,12 +73,12 @@ idSpirit.onclick = showCardSpirit;
 idHomepage.onclick = showHomepage;
 
 
-// creation de la page d'accueil avec toute les cards
+// creation de la page d'accueil avec toutes les cards
 function showHomepage(){
   idMainArea.innerText = `HOME PAGE a copier coller`;
 }
 
-// creation de la page champages avec toute les cards
+// creation de la page champagnes avec toutes les cards
 function showCardChampagne() {
   idMainArea.innerText = "";
 
@@ -120,7 +120,7 @@ function showCardWine() {
   });
 }
 
-// creation de la page Spiriteux avec toute les cards
+// création de la page Spiriteux avec toutes les cards
 function showCardSpirit() {
   idMainArea.innerText = "";
 
@@ -182,11 +182,11 @@ function createCard(type) {
       </div>`;
 }
 
-// ajout d'une ligne de tableau dans la modal panier en fonction de la card 
+// ajout d'une ligne de tableau dans la modale panier en fonction de la card 
 function addToBasket(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
-  //quand on click la 1ere fois sur ajouté au panier d'une des bouteil, ca augmente la quantité de cette bouteille et ca ajoute le tableau
+  //Quand on clic la première fois sur "Ajoutez au panier" d'une des bouteilles, ça augmente la quantité de cette bouteille et ça créé le tableau.
   if (type[6] === 0) {
     type[6]++;
     idCartList.innerHTML +=
@@ -202,7 +202,7 @@ function addToBasket(type) {
       <td class="" id="result${type[4]}"><b>${type[3]}</b>€</td>
     </tr>`;
   } else {
-    //si on click a nouveau sur la mm boutail dans le shop, ca ajoute une bouteille de plus au panier
+    //Si on clic à nouveau sur la même bouteille dans le magasin, ça ajoute une bouteille de plus au panier.
     type[6]++;
     idnumber.innerHTML =
       `${type[6]}<br>
@@ -211,10 +211,10 @@ function addToBasket(type) {
     idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
   }
   
-  //ajout du prix sur le total global
+  //Ajout du prix sur le total.
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  //si le prix total est supperieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  //Si le prix total du panier est supérieur a 0, alors l'icône change, sinon elle redevient vide.
   if (totalPrice > 0) {
     idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
   } else {
@@ -222,7 +222,7 @@ function addToBasket(type) {
   }
 }
 
-//fonction bouton + avais ajout du total sur le bouton payement
+//Fonction des boutons "moins" avec ajout total sur le prix du paiement.
 function functionBtnUp(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
@@ -235,10 +235,10 @@ function functionBtnUp(type) {
   `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
 
-  //total -> bouton payement
+  //Total -> bouton paiement 
   totalPrice = Number(totalPrice) + Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  //si le prix total est supperieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  //Si le prix total du panier est supérieur a 0, alors l'icône change, sinon elle redevient vide.
   if (totalPrice > 0) {
     idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
   } else {
@@ -246,7 +246,7 @@ function functionBtnUp(type) {
   }
 }
 
-//fonction bouton - avais ajout du total sur le bouton payement
+//Fonction des boutons "moins" avec ajout total sur le prix du paiement.
 function functionBtnDown(type) {
   let idResult = document.getElementById(`result${type[4]}`);
   let idnumber = document.getElementById(`number${type[4]}`);
@@ -259,14 +259,14 @@ function functionBtnDown(type) {
     <a class="btnmoins" id="Down${type[4]}" onclick="functionBtnDown(${type[5]})"><img src="assets/img/moins.png" style="width: 2rem;" alt="moins"></a>
   `;
   idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
-  // si le nombre de bouteil = 0 alors ca supprime la ligne du tableau
+  // Si le nombre de bouteille est égal à zéro, la ligne disparaît.
   if (type[6] < 1) {
     idTable.innerHTML = "";
   }
-  //total -> bouton payement
+  //total -> bouton paiement
   totalPrice = Number(totalPrice) - Number(type[3]);
   idBuyTotal.innerHTML = "Paiement: <b>" + Number(totalPrice) + "</b> €";
-  //si le prix total est superieur a 0 alors l'icone du panier change sinon elle redeviens vide
+  //Si le prix total du panier est supérieur a 0, alors l'icône change, sinon elle redevient vide.
   if (totalPrice > 0) {
     idIconCart.innerHTML = `<img src="assets/img/cartfull.png" alt="Panier plein" style="width: 2.5em; height: 2.5em;">`
   } else {
