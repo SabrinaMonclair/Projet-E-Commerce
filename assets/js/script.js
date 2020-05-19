@@ -263,7 +263,7 @@ function addToBasket(type) {
     idResult.innerHTML = "<b>" + type[3] * type[6] + "</b>€";
     
   }
-  //le panier c'est plus vide
+  //le panier n'est plus vide
   idCartEmpty.innerHTML =``;
   //Ajout du prix sur le total.
   totalPrice = Number(totalPrice) + Number(type[3]);
